@@ -1,0 +1,59 @@
+<p>
+  <strong>Manufacture:</strong>
+  <%= @projector.manufacture %>
+</p>
+ 
+<p>
+  <strong>Model:</strong>
+  <%= @projector.model %>
+</p>
+
+<p>
+  <strong>Serial:</strong>
+  <%= @projector.serial %>
+</p>
+
+<p>
+  <strong>AHC Number:</strong>
+  <%= @projector.ahc_number %>
+</p>
+
+<p>
+  <strong>Classroom:</strong>
+  <%= @projector.classroom %>
+</p>
+
+<p>
+  <strong>Mount Type:</strong>
+  <%= @projector.mount_type %>
+</p>
+
+<p>
+  <strong>Lamp Type:</strong>
+  <%= @projector.lamp_type %>
+</p>
+
+<p>
+  <strong>Throw Distance:</strong>
+  <%= @projector.throw_distance %>
+</p>
+
+<p>
+  <strong>Date Installed:</strong>
+  <%= @projector.date_install.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <strong>Date Checked:</strong>
+  <%= @projector.date_checked.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <strong>Last Lamp Change:</strong>
+  <%= @projector.lamp_change.strftime("%m/%d/%Y") %>
+</p>
+
+<p>
+  <strong>Last Repaired:</strong>
+  <%= @projector.repair_date.strftime("%m/%d/%Y") %>
+</p>

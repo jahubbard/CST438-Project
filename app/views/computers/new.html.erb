@@ -1,0 +1,32 @@
+<h1>New Computer</h1>
+
+<%= form_with scope: :computer, url: computers_path, local: true do |form| %>
+  <p>
+    <%= form.label :manufacture %><br>
+    <%= form.text_field :manufacture %>
+  </p>
+  <p>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+  </p>
+  <p>
+    <%= form.label :serial %><br>
+    <%= form.text_field :serial %>
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :classroom %><br>
+    <%= form.text_field :classroom %>
+  </p>
+  <p>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

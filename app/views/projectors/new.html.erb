@@ -1,0 +1,55 @@
+<h1>New Projector</h1>
+
+<%= form_with scope: :projector, url: projectors_path, local: true do |form| %>
+  <p>
+    <%= form.label :manufacture %><br>
+    <%= form.text_field :manufacture %>
+  </p>
+  <p>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+  </p>
+  <p>
+    <%= form.label :serial %><br>
+    <%= form.text_field :serial %>
+  </p>
+  <p>
+    <%= form.label :ahc_number %><br>
+    <%= form.text_field :ahc_number %>
+  </p>
+  <p>
+    <%= form.label :classroom %><br>
+    <%= form.text_field :classroom %>
+  </p>
+  <p>
+    <%= form.label :mount_type %><br>
+    <%= form.text_field :mount_type %>
+  </p>
+  <p>
+    <%= form.label :lamp_type %><br>
+    <%= form.text_field :lamp_type %>
+  </p>
+  <p>
+    <%= form.label :throw_distance %><br>
+    <%= form.text_field :throw_distance %>
+  </p>
+  <p>
+    <%= form.label :date_install %><br>
+    <%= form.date_field :date_install %>
+  </p>
+  <p>
+    <%= form.label :date_checked %><br>
+    <%= form.date_field :date_checked %>
+  </p>
+  <p>
+    <%= form.label :lamp_change %><br>
+    <%= form.date_field :lamp_change %>
+  </p>
+  <p>
+    <%= form.label :repair_date %><br>
+    <%= form.date_field :repair_date %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
