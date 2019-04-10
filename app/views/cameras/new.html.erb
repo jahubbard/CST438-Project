@@ -1,7 +1,7 @@
 <div class="container">
-<h1>New Computer</h1>
+<h1>New Camera</h1>
 
-<%= form_with scope: :computer, url: computers_path, local: true do |form| %>
+<%= form_with scope: :camera, url: cameras_path, local: true do |form| %>
   <p>
     <%= form.label :manufacture %><br>
     <%= form.text_field :manufacture %>
@@ -15,16 +15,12 @@
     <%= form.text_field :serial %>
   </p>
   <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
     <%= form.label :classroom %><br>
     <%= form.text_field :classroom %>
   </p>
   <p>
-    <%= form.label :check_date %><br>
-    <%= form.date_field :check_date %>
+    <%= form.label :ahc_number %><br>
+    <%= form.text_field :ahc_number %>
   </p>
  
   <p>

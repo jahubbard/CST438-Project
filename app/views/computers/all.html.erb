@@ -1,29 +1,31 @@
-<p>
+<% @computer.each do |com| %>
+   <p>
   <strong>Manufacture:</strong>
-  <%= @computer.manufacture %>
+  <%= com.manufacture %>
 </p>
  
 <p>
   <strong>Model:</strong>
-  <%= @computer.model %>
+  <%= com.model %>
 </p>
 
 <p>
   <strong>Serial:</strong>
-  <%= @computer.serial %>
+  <%= com.serial %>
 </p>
 
 <p>
   <strong>Name:</strong>
-  <%= @computer.name %>
+  <%= com.name %>
 </p>
 
 <p>
   <strong>Classroom:</strong>
-  <%= @computer.classroom %>
+  <%= com.classroom %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @computer.check_date.strftime("%m/%d/%Y") %>
+  <%= com.check_date.strftime("%m/%d/%Y") %>
 </p>
+<%end %>

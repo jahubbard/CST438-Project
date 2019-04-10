@@ -1,0 +1,2 @@
+class Switcher < ApplicationRecord
+end
