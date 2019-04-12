@@ -1,4 +1,8 @@
 class ProjectorsController < ApplicationController
+    def index
+        @projectors = Projector.all
+    end
+    
     def show
         @projector = Projector.find(params[:id])
     end

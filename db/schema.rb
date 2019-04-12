@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190410044005) do
+ActiveRecord::Schema.define(version: 20190412035637) do
 
   create_table "cameras", force: :cascade do |t|
     t.string "manufacture"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20190410044005) do
     t.date "repair_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "total_lamp_hours"
   end
 
   create_table "switchers", force: :cascade do |t|

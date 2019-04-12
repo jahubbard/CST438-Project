@@ -1,4 +1,4 @@
-<% @computer.each do |com| %>
+<% @computers.each do |com| %>
    <p>
   <strong>Manufacture:</strong>
   <%= com.manufacture %>
@@ -28,4 +28,4 @@
   <strong>Date:</strong>
   <%= com.check_date.strftime("%m/%d/%Y") %>
 </p>
-<%end %>
+<% end %>

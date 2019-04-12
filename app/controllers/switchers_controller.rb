@@ -1,5 +1,9 @@
 class SwitchersController < ApplicationController
-     def show
+    def index
+        @switchers = Switcher.all
+    end
+    
+    def show
         @switcher = Switcher.find(params[:id])
     end
     
