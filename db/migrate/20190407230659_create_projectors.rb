@@ -4,7 +4,6 @@ class CreateProjectors < ActiveRecord::Migration[5.1]
       t.string :manufacture
       t.string :model
       t.string :serial
-      t.string :string
       t.string :ahc_number
       t.string :classroom
       t.string :mount_type

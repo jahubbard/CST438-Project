@@ -1,29 +1,55 @@
-<p>
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+</header> 
+  
+  
+<style>
+      hr
+    {
+        border: 1px solid black;
+    }
+  
+</style>
+<body>
+  <h1 align ="center"> Camera Data </h1>
+<hr>
+    <%= render 'nav' =%>
+<hr>
+
+<p align ="center">
   <strong>Manufacture:</strong>
   <%= @switcher.manufacture %>
 </p>
  
-<p>
+<p align ="center">
   <strong>Model:</strong>
   <%= @switcher.model %>
-</p>
+</p align ="center">
 
-<p>
+<p align ="center">
   <strong>Serial:</strong>
   <%= @switcher.serial %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Classroom:</strong>
   <%= @switcher.classroom %>
 </p>
 
-<p>
+<p align ="center">
   <strong>AHC Number:</strong>
   <%= @switcher.ahc_number %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Audio:</strong>
   <%= @switcher.audio %>
 </p>
+<p align ="center">
+  <%= link_to 'Back to Switchers', switchers_path %>
+</p>
+ 
+</body>
+</html>

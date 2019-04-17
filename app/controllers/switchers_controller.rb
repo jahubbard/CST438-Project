@@ -8,17 +8,42 @@ class SwitchersController < ApplicationController
     end
     
     def new
+        @switcher = Switcher.find(params[:id])
+    end
+    def edit
+        @switcher = Switcher.find(params[:id]) 
     end
     
     def create
-        @switcher = Switcher.new(computer_params)
+        @switcher = Switcher.new(switcher_params)
         
-        @switcher.save
-        redirect_to @switcher
+        if @switcher.save
+            redirect_to @switcher
+        else
+            render 'new'
+        end
     end
     
+    def update
+        @switcher = Switcher.find(params[:id])
+        
+        if @switcher.update(switcher_params)
+            redirect_to @switcher
+        else
+            render 'edit'
+        end
+    end
+    
+    def destroy
+        @switcher = Switcher.find(params[:id])
+        @switcher.destroy
+        
+        redirect_to switchers_path
+    end
+    
+    
     private
-        def computer_params
+        def switcher_params
             params.require(:switcher).permit(:manufacture, :model, :serial, 
             :classroom, :ahc_number, :audio)
         end

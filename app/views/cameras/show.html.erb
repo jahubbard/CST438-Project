@@ -1,24 +1,50 @@
-<p>
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+</header> 
+  
+  
+<style>
+      hr
+    {
+        border: 1px solid black;
+    }
+  
+</style>
+<body>
+  <h1 align ="center"> Camera Data </h1>
+<hr>
+    <%= render 'nav' =%>
+<hr>
+
+<p align ="center">
   <strong>Manufacture:</strong>
   <%= @camera.manufacture %>
 </p>
  
-<p>
+<p align ="center">
   <strong>Model:</strong>
   <%= @camera.model %>
-</p>
+</p align ="center">
 
-<p>
+<p align ="center">
   <strong>Serial:</strong>
   <%= @camera.serial %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Classroom:</strong>
   <%= @camera.classroom %>
 </p>
 
-<p>
+<p align ="center">
   <strong>AHC Number:</strong>
   <%= @camera.ahc_number %>
 </p>
+<p align ="center">
+  <%= link_to 'Back to Cameras', cameras_path %>
+</p>
+ 
+</body>
+</html>

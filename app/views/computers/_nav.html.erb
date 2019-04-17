@@ -1,0 +1,23 @@
+     <style>
+    nav
+    {
+        width: 900px;
+    }
+        
+    .navmid
+    {
+        display: flex;
+        justify-content:space-between;
+        list-style-type: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    <nav class ="navmid">
+        
+        <%= link_to 'Computers', computers_path, style: "color: black;" %>
+        <%= link_to 'Projectors', projectors_path, style: "color: black;" %>
+        <%= link_to 'Home', landing_path, style: "color:black;" %>
+        <%= link_to 'Cameras', cameras_path, style: "color: black;" %>
+        <%= link_to 'Switcher', switchers_path, style: "color: black;" %> 
+    </nav>

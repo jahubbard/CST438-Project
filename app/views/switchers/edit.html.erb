@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html>
-<header>
-    <meta charset="UTF-8">
-</header> 
-  
-  
-<style>
-      hr
-    {
-        border: 1px solid black;
-    }
-  
-</style>
-<body>
-  <h1 align="center"> Camera Database Entry </h1>
-<hr>
-    <%= render 'nav' =%>
-<hr>
 <div class="container">
-<h2 align="center">New Camera</h2>
+<h1>Edit Switchers</h1>
 
-<%= form_with scope: :camera, url: cameras_path, local: true do |form| %>
-  <p align="center">
+<%= form_with(model: @computer, local: true) do |form| %>
+ 
+<p align="center">
     <%= form.label :manufacture %><br>
     <%= form.text_field :manufacture %>
   </p>
@@ -41,16 +23,15 @@
     <%= form.label :ahc_number %><br>
     <%= form.text_field :ahc_number %>
   </p>
- 
+   <p align="center">
+    <%= form.label :audio %><br>
+    <%= form.text_field :audio %>
+  </p>
   <p align="center">
     <%= form.submit %>
   </p>
-  <p align="center">
-    <%= link_to 'Back to Cameras', cameras_path %>
-  </p>
  
 <% end %>
-</div>
  
-</body>
-</html>
+<%= link_to 'Back', switchers_path %>
+</div>

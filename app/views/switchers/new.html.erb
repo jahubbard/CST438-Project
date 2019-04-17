@@ -1,33 +1,58 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+</header> 
+  
+  
+<style>
+      hr
+    {
+        border: 1px solid black;
+    }
+  
+</style>
+<body>
+  <h1 align="center"> Switcher Database Entry</h1>
+ 
+<hr>
+    <%= render 'nav' =%>
+<hr> 
+<h2 align="center">New Switcher</h2>
+</body>
 <div class="container">
-<h1>New Switcher</h1>
+
 
 <%= form_with scope: :switcher, url: switchers_path, local: true do |form| %>
-  <p>
+  <p align="center">
     <%= form.label :manufacture %><br>
     <%= form.text_field :manufacture %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :model %><br>
     <%= form.text_field :model %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :serial %><br>
     <%= form.text_field :serial %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :classroom %><br>
     <%= form.text_field :classroom %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :ahc_number %><br>
     <%= form.text_field :ahc_number %>
   </p>
-   <p>
+   <p align="center">
     <%= form.label :audio %><br>
     <%= form.text_field :audio %>
   </p>
-  <p>
+  <p align="center">
     <%= form.submit %>
+  </p>
+    <p align="center">
+    <%= link_to 'Back to Switchers', switchers_path %>
   </p>
 <% end %>
 </div>

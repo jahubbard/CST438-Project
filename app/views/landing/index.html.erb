@@ -11,35 +11,47 @@
     {
         border: 1px solid black;
     }
-    .links
+
+    .hr1
     {
-        text-align="center";
-        color: #00080f;
-        text-decoration: none;
-        
+         width: 50%; 
+    }
+    .hr2
+    {
+        width: 25%;
+    }
+    .endline
+    {
+        position: fixed;
+        bottom: 0;
     }
 </style>
 <body>
     <h1 align="center">Welcome to the Information Technology Inventory System!</h1>    
     <hr>
     <div align="center">
-        <%= link_to 'Computers', computers_path %>
-        <%= link_to 'Projectors', projectors_path %>
-        <%= link_to 'Cameras', cameras_path %>
-        <%= link_to 'Switcher', switchers_path %>        
+        <%= render 'nav' =%>       
     </div>
-
-    
     <hr>
+    <h3 align ="center">
+        Mission Statement
+    </h3>
+    <hr class = "hr1">
+    <h4 align ="center"> We are trying to benefits those who use old means of doing inventory with this application.</h4>
+   <br>
+    <h3 align ="center"> Over View</h3>
+    <hr class ="hr2">
     
-    <p>The project that we will be working on is a website that will connect to the database. 
-The data that will be uploaded is information regarding information technology equipment in classrooms. 
-Since the data is stored in many excel spread sheets it will be modified and uploaded to a database. 
-From there, certain features will be created to prevent classrooms from going down due to technology getting old or dying. 
-This will aid the department by giving them a better understanding as to when rooms need maintenance and which one is a 
-priority over the others. The steps for the project will be listed here. There may be additional features added depending 
-on the amount of time it takes to complete the tasks already listed.
+    <p>This project is created with ruby and rails. It is an inventory system to allow users 
+    access to data in different categories and allow efficient planning based upon the data. 
+    In this instance, we are working with a local community college to assist them with their 
+    inventory procedure. Since they are using excel as their way of keeping their inventory, 
+    we decided to develop this website. This application allows users to view four different 
+    categories based upon the equipment used in the classrooms. From that, the users can see 
+    the data in that category and make changes. This will aid the college by keeping a up to 
+    date inventory and being able to plan for equipment upgrades.  
     </p>
-
+<h4 class ="endline">Created by: Jared Hubbard and Cody Dill</h4>
 </body>
+
 </html>

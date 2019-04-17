@@ -1,27 +1,60 @@
-<% @switchers.each do |swi| %>
-   <p>
-  <strong>Manufacture:</strong>
-  <%= swi.manufacture %>
-</p>
-<p>
-  <strong>Model:</strong>
-  <%= swi.model %>
-</p>
-<p>
-  <strong>Serial:</strong>
-  <%= swi.serial %>
-</p>
-<p>
-  <strong>Classroom:</strong>
-  <%= swi.classroom %>
-</p>
-<p>
-  <strong>AHC_Number</strong>
-  <%= swi.ahc_number %>
-</p>
-<p>
-  <strong>Audio:</strong>
-  <%= swi.audio %>
-</p>
+<!DOCTYPE html>
 
-<% end %>
+<html>
+    
+<header>
+    <meta charset="UTF-8">
+</header>
+<style>
+    hr
+    {
+        border: 1px solid black;
+    }
+  .float-right 
+  {
+  background-color: darkgray;
+  color: white;
+  border: 2px solid #555555;
+  }
+  .float-right:hover
+  {
+  background-color: #555555;
+  color: white;
+  }
+</style>
+
+<h1 align="center">Switcher Data</h1>
+<hr>
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Model</th>
+        <th scope="col">Serial</th>
+        <th scope="col">Classroom</th>
+        <th scope="col">Audio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @switchers.each do |swi| %>
+      <tr>
+        <td><%= swi.manufacture %></td>
+        <td><%= swi.model %></td>
+        <td><%= swi.serial %></td>
+        <td><%= swi.classroom %></td>
+        <td><%= swi.audio %></td>
+        <td><%= link_to 'Show', switcher_path(swi) %></td>
+        <td><%= link_to 'Edit', edit_switcher_path(swi) %></td>
+        <td><%= link_to 'Destroy', switcher_path(swi),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path %>
+  <%= link_to '<button type="button" class="float-right">New Switcher</button>'.html_safe, new_switcher_path %>
+</div>

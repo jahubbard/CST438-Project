@@ -1,20 +1,60 @@
-<% @cameras.each do |cam| %>
-   <p>
-  <strong>Manufacture:</strong>
-  <%= cam.manufacture %>
-</p>
- 
-<p>
-  <strong>Model:</strong>
-  <%= cam.model %>
-</p>
+<!DOCTYPE html>
 
-<p>
-  <strong>Serial:</strong>
-  <%= cam.serial %>
-</p>
-<p>
-  <strong>Classroom:</strong>
-  <%= cam.classroom %>
-</p>
-<% end %>
+<html>
+    
+<header>
+    <meta charset="UTF-8">
+</header>
+<style>
+    hr
+    {
+        border: 1px solid black;
+    }
+  .float-right 
+  {
+  background-color: darkgray;
+  color: white;
+  border: 2px solid #555555;
+  }
+  .float-right:hover
+  {
+  background-color: #555555;
+  color: white;
+  }
+</style>
+
+<h1 align="center">Camera Data</h1>
+<hr>
+  <%= render 'nav' =%>
+<hr>
+
+<div class="container">
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Model</th>
+        <th scope="col">Serial</th>
+        <th scope="col">Classroom</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cameras.each do |cam| %>
+      <tr>
+        <td><%= cam.manufacture %></td>
+        <td><%= cam.model %></td>
+        <td><%= cam.serial %></td>
+        <td><%= cam.classroom %></td>
+        <td><%= link_to 'Show', camera_path(cam) %></td>
+        <td><%= link_to 'Edit', edit_camera_path(cam) %></td>
+        <td><%= link_to 'Destroy', camera_path(cam),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>        
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path %>
+  <%= link_to '<button type="button" class="float-right">New Camera</button>'.html_safe, new_camera_path %>
+</div>
+

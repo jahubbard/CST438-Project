@@ -14,7 +14,13 @@
 @import "bootstrap";
 body
 {
-    background: url('wood.jpg') no-repeat center center;
-    background-size: cover;
-    height: 800px;
+    
+    
+    background: linear-gradient(to left top, #003366 12%, #ff9966 99%) fixed;
+  
+    //background-size: cover;
+    background-repeat: no-repeat;
+    //background-position: center center;
+  //  height: 100vh;
+
 }

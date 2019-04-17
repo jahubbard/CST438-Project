@@ -1,0 +1,34 @@
+<div class="container">
+<h1>Edit Camera</h1>
+
+<%= form_with(model: @camera, local: true) do |form| %>
+ 
+  <p>
+    <%= form.label :manufacture %><br>
+    <%= form.text_field :manufacture %>
+  </p>
+  <p>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+  </p>
+  <p>
+    <%= form.label :serial %><br>
+    <%= form.text_field :serial %>
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :classroom %><br>
+    <%= form.text_field :classroom %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', cameras_path %>
+</div>

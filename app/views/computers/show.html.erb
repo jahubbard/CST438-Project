@@ -1,29 +1,54 @@
-<p>
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+</header> 
+  
+  
+<style>
+      hr
+    {
+        border: 1px solid black;
+    }
+  
+</style>
+<body>
+  <h1 align ="center"> Computer Data </h1>
+<hr>
+    <%= render 'nav' =%>
+<hr>
+<p align ="center">
   <strong>Manufacture:</strong>
   <%= @computer.manufacture %>
 </p>
  
-<p>
+<p align ="center">
   <strong>Model:</strong>
   <%= @computer.model %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Serial:</strong>
   <%= @computer.serial %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Name:</strong>
   <%= @computer.name %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Classroom:</strong>
   <%= @computer.classroom %>
 </p>
 
-<p>
+<p align ="center">
   <strong>Date:</strong>
   <%= @computer.check_date.strftime("%m/%d/%Y") %>
 </p>
+
+<p align ="center">
+  <%= link_to 'Back to Computers', computers_path %>
+</p>
+</body>
+</html>

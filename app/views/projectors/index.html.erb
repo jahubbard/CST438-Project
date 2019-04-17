@@ -1,54 +1,87 @@
-<% @projectors.each do |pro| %>
-   <p>
-  <strong>Manufacture:</strong>
-  <%= pro.manufacture %>
-</p>
-<p>
-  <strong>Model:</strong>
-  <%= pro.model %>
-</p>
-<p>
-  <strong>Serial:</strong>
-  <%= pro.serial %>
-</p>
-<p>
-  <strong>AHC_Number</strong>
-  <%= pro.ahc_number %>
-</p>
-<p>
-  <strong>Classroom:</strong>
-  <%= pro.classroom %>
-</p>
-<p>
-  <strong>Mount Type:</strong>
-  <%= pro.mount_type %>
-</p>
-<p>
-  <strong>Lamp Type:</strong>
-  <%= pro.lamp_type %>
-</p>
-<p>
-  <strong>Throw Distance:</strong>
-  <%= pro.throw_distance %>
-</p>
-<p>
-  <strong>Date Installed:</strong>
-  <%= pro.date_install %>
-</p>
-<p>
-  <strong>Date Checked:</strong>
-  <%= pro.date_checked %>
-</p>
-<p>
-  <strong>Lamp Change:</strong>
-  <%= pro.lamp_change %>
-</p>
-<p>
-  <strong>Total Lamp Hours:</strong>
-  <%= pro.total_lamp_hours %>
-</p>
-<p>
-  <strong>Repair Date:</strong>
-  <%= pro.repair_date %>
-</p>
-<% end %>
+<!DOCTYPE html>
+
+<html>
+    
+<header>
+    <meta charset="UTF-8">
+</header>
+<style>
+    hr
+    {
+        border: 1px solid black;
+    }
+  .float-right 
+  {
+  background-color: darkgray;
+  color: white;
+  border: 2px solid #555555;
+  }
+  .float-right:hover
+  {
+  background-color: #555555;
+  color: white;
+  }
+  .test
+  {
+    align ="center";
+  }
+  
+  
+</style>
+<body>
+<h1 align="center">Projector Data</h1>
+<hr>
+  <%= render 'nav' %>
+<hr>
+
+<div class="container">
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Model</th>
+        <th scope="col">Serial</th>
+        <th scope="col">Classroom</th>
+        <th scope="col">Mount Type</th>
+        <th scope="col">Lamp Type</th>
+        <th scope="col">Throw Distance</th>
+        <th scope="col">Date Installed</th>
+        <th scope="col">Date Checked</th>
+        <th scope="col">Lamp Changed</th>
+        <th scope="col">Total Lamp Hours</th>
+        <th scope="col">Repair Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @projectors.each do |pro| %>
+      <tr>
+        <td><%= pro.manufacture %></td>
+        <td><%= pro.model %></td>
+        <td><%= pro.serial %></td>
+        <td><%= pro.classroom %></td>
+        <td><%= pro.mount_type %></td>
+        <td><%= pro.lamp_type %></td>
+        <td><%= pro.throw_distance %></td>
+        <td><%= pro.date_install %></td>
+        <td><%= pro.date_checked %></td>
+        <td><%= pro.lamp_change %></td>
+        <td><%= pro.total_lamp_hours %></td>
+        <td><%= pro.repair_date %></td>
+        <td><%= link_to 'Show', projector_path(pro) %></td>
+        <td><%= link_to 'Edit', edit_projector_path(pro) %></td>
+        <td><%= link_to 'Destroy', projector_path(pro),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path %>
+  <%= link_to '<button type="button" class="float-right">New Projector</button>'.html_safe, new_projector_path %>
+</div>
+
+</body>
+</html>
+
+
+

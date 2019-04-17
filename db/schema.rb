@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20190412035637) do
     t.string "manufacture"
     t.string "model"
     t.string "serial"
-    t.string "string"
     t.string "ahc_number"
     t.string "classroom"
     t.string "mount_type"

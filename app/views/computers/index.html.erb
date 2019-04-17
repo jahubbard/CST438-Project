@@ -1,31 +1,71 @@
-<% @computers.each do |com| %>
-   <p>
-  <strong>Manufacture:</strong>
-  <%= com.manufacture %>
-</p>
- 
-<p>
-  <strong>Model:</strong>
-  <%= com.model %>
-</p>
+<!DOCTYPE html>
 
-<p>
-  <strong>Serial:</strong>
-  <%= com.serial %>
-</p>
+<html>
+    
+<header>
+    <meta charset="UTF-8">
+</header>
+<style>
+    hr
+    {
+        border: 1px solid black;
+    }
+  .float-right 
+  {
+  background-color: darkgray;
+  color: white;
+  border: 2px solid #555555;
+  }
+  .float-right:hover
+  {
+  background-color: #555555;
+  color: white;
+  }
 
-<p>
-  <strong>Name:</strong>
-  <%= com.name %>
-</p>
+  
+</style>
+<body>
 
-<p>
-  <strong>Classroom:</strong>
-  <%= com.classroom %>
-</p>
+<h1 align="center">Computer Data</h1>
+<hr>
 
-<p>
-  <strong>Date:</strong>
-  <%= com.check_date.strftime("%m/%d/%Y") %>
-</p>
-<% end %>
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Manufacture</th>
+        <th scope="col">Model</th>
+        <th scope="col">Serial</th>
+        <th scope="col">Name</th>
+        <th scope="col">Classroom</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @computers.each do |com| %>
+      <tr>
+        
+        <td><%= com.manufacture %></td>
+        <td><%= com.model %></td>
+        <td><%= com.serial %></td>
+        <td><%= com.name %></td>
+        <td><%= com.classroom %></td>
+        <!-- The date is not working currently. -->
+        <td><%= com&.check_date&.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to 'Show', computer_path(com) %></td>
+        <td><%= link_to 'Edit', edit_computer_path(com) %></td>
+        <td><%= link_to 'Destroy', computer_path(com),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path %>
+  <%= link_to '<button type="button" class="float-right">New Computer</button>'.html_safe, new_computer_path %>
+</div>
+  
+</body>
+</html>

@@ -1,34 +1,49 @@
 <div class="container">
-<h1>New Computer</h1>
+  <style>
+    hr
+    {
+        border: 1px solid black;
+    }
+    </style>
+<h1 align ="center">New Computer</h1>
+<hr>
+  <%= render 'nav' =%>
+<hr>
 
 <%= form_with scope: :computer, url: computers_path, local: true do |form| %>
-  <p>
-    <%= form.label :manufacture %><br>
-    <%= form.text_field :manufacture %>
+
+    <div class="form-group">
+      <%= form.label :manufacture %><br>
+      <%= form.text_field :manufacture, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :model %><br>
+      <%= form.text_field :model, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :serial %><br>
+      <%= form.text_field :serial, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :name %><br>
+      <%= form.text_field :name, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :classroom %><br>
+      <%= form.text_field :classroom, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :check_date %><br>
+      <%= form.date_field :check_date, class: "form-control" %>      
+    </div>
+    <div class="col-auto">
+      <p align ="center">
+      <%= form.submit :class => 'btn btn-primary mb-2'%>
+      </p>
+    </div>
+  <p align ="center">
+      <%= link_to 'Back to Computers', computers_path %>
   </p>
-  <p>
-    <%= form.label :model %><br>
-    <%= form.text_field :model %>
-  </p>
-  <p>
-    <%= form.label :serial %><br>
-    <%= form.text_field :serial %>
-  </p>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :classroom %><br>
-    <%= form.text_field :classroom %>
-  </p>
-  <p>
-    <%= form.label :check_date %><br>
-    <%= form.date_field :check_date %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
+
 <% end %>
 </div>
