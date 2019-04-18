@@ -13,6 +13,7 @@
   
 </style>
 <body>
+  <div class="container">
   <h1 align="center"> Projector Database Entry</h1>
  
 <hr>
@@ -23,65 +24,70 @@
 
 
 <%= form_with scope: :projector, url: projectors_path, local: true do |form| %>
-  <p align="center">
-    <%= form.label :manufacture %><br>
-    <%= form.text_field :manufacture %>
-  </p>
-  <p align="center">
-    <%= form.label :model %><br>
-    <%= form.text_field :model %>
-  </p>
-  <p align="center">
-    <%= form.label :serial %><br>
-    <%= form.text_field :serial %>
-  </p>
-  <p align="center">
-    <%= form.label :ahc_number %><br>
-    <%= form.text_field :ahc_number %>
-  </p>
-  <p align="center">
-    <%= form.label :classroom %><br>
-    <%= form.text_field :classroom %>
-  </p>
-  <p align="center">
-    <%= form.label :mount_type %><br>
-    <%= form.text_field :mount_type %>
-  </p>
-  <p align="center">
-    <%= form.label :lamp_type %><br>
-    <%= form.text_field :lamp_type %>
-  </p>
-  <p align="center">
-    <%= form.label :throw_distance %><br>
-    <%= form.text_field :throw_distance %>
-  </p>
-  <p align="center">
-    <%= form.label :date_install %><br>
-    <%= form.date_field :date_install %>
-  </p>
-  <p align="center">
-    <%= form.label :date_checked %><br>
-    <%= form.date_field :date_checked %>
-  </p>
-  <p align="center">
-    <%= form.label :lamp_change %><br>
-    <%= form.date_field :lamp_change %>
-  </p>
-  <p align="center">
+  
+  <div class="form-group">
+      <%= form.label :manufacture %><br>
+      <%= form.text_field :manufacture, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :model %><br>
+      <%= form.text_field :model, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :serial %><br>
+      <%= form.text_field :serial, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :ahc_number %><br>
+      <%= form.text_field :ahc_number, class: "form-control" %>
+    </div>  
+    <div class="form-group">
+      <%= form.label :classroom %><br>
+      <%= form.text_field :classroom, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :mount_type %><br>
+      <%= form.text_field :mount_type, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :lamp_type %><br>
+      <%= form.text_field :lamp_type, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :throw_distance %><br>
+      <%= form.text_field :throw_distance, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :date_install %><br>
+      <%= form.text_field :date_install, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :date_checked %><br>
+      <%= form.text_field :date_checked, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :lamp_change %><br>
+      <%= form.text_field :lamp_change, class: "form-control" %>    
+    </div>
+    <div class="form-group">
       <%= form.label :total_lamp_hours %><br>
-      <%= form.text_field :total_lamp_hours %>
-  </p>
-  <p align="center">
-    <%= form.label :repair_date %><br>
-    <%= form.date_field :repair_date %>
-  </p>
-  <p align="center">
-    <%= form.submit %>
-  </p>
+      <%= form.text_field :total_lamp_hours, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :repair_date %><br>
+      <%= form.text_field :repair_date, class: "form-control" %>    
+    </div>
+  
+    <div class="col-auto">
+      <p align ="center">
+      <%= form.submit :class => 'btn btn-primary mb-2'%>
+      </p>
+    </div>
   <p align="center">
     <%= link_to 'Back to Projectors', projectors_path %>
   </p>
   
 <% end %>
+  </div>
 </body>
 </html>

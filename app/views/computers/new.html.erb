@@ -1,14 +1,19 @@
-<div class="container">
+<html>
   <style>
     hr
     {
         border: 1px solid black;
     }
-    </style>
-<h1 align ="center">New Computer</h1>
-<hr>
-  <%= render 'nav' =%>
-<hr>
+  </style>
+  <body>
+  <div class="container">
+  
+      <h1 align ="center">New Computer</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
+    
+
 
 <%= form_with scope: :computer, url: computers_path, local: true do |form| %>
 
@@ -47,3 +52,5 @@
 
 <% end %>
 </div>
+</body>
+</html>

@@ -20,4 +20,9 @@
         <%= link_to 'Home', landing_path, style: "color:black;" %>
         <%= link_to 'Cameras', cameras_path, style: "color: black;" %>
         <%= link_to 'Switcher', switchers_path, style: "color: black;" %> 
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, style: "color: black;"  %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, style: "color: black;"  %>
+        <% end %>
     </nav>

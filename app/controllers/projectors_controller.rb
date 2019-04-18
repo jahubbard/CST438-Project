@@ -1,4 +1,6 @@
 class ProjectorsController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
         @projectors = Projector.all
     end

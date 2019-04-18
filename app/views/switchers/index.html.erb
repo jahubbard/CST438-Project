@@ -21,24 +21,33 @@
   background-color: #555555;
   color: white;
   }
+  input.form-control
+  {
+    background-color: #4d4d4d;
+    color:white;
+  }
 </style>
-
+<body>
 <h1 align="center">Switcher Data</h1>
 <hr>
   <%= render 'nav' %>
-<hr>
+<hr>  
+
+
 <div class="container">
-  <table class="table table-hover table-dark">
+  <input class ="form-control" id="myInput" type="text" placeholder="Search the Table">
+  <br>
+  <table class="table table-hover table-dark", id="myTable2">
     <thead>
       <tr>
-        <th scope="col">Manufacture</th>
-        <th scope="col">Model</th>
-        <th scope="col">Serial</th>
-        <th scope="col">Classroom</th>
-        <th scope="col">Audio</th>
+        <th scope="col", onclick="sortTable(0)">Manufacture</th>
+        <th scope="col", onclick="sortTable(1)">Model</th>
+        <th scope="col", onclick="sortTable(2)">Serial</th>
+        <th scope="col", onclick="sortTable(3)">Classroom</th>
+        <th scope="col", onclick="sortTable(4)">Audio</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="myTable">
       <% @switchers.each do |swi| %>
       <tr>
         <td><%= swi.manufacture %></td>
@@ -58,3 +67,17 @@
   <%= link_to 'Back to Dashboard', landing_path %>
   <%= link_to '<button type="button" class="float-right">New Switcher</button>'.html_safe, new_switcher_path %>
 </div>
+
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});  
+  
+</script>
+</body>
+</html>

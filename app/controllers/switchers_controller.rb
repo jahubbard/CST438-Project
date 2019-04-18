@@ -1,4 +1,6 @@
 class SwitchersController < ApplicationController
+    before_action :authenticate_user!
+    
     def index
         @switchers = Switcher.all
     end
@@ -8,7 +10,7 @@ class SwitchersController < ApplicationController
     end
     
     def new
-        @switcher = Switcher.find(params[:id])
+        @switcher = Switcher.new
     end
     def edit
         @switcher = Switcher.find(params[:id]) 

@@ -21,31 +21,32 @@
 <h2 align="center">New Camera</h2>
 
 <%= form_with scope: :camera, url: cameras_path, local: true do |form| %>
-  <p align="center">
+  <div class ="form-group">
     <%= form.label :manufacture %><br>
-    <%= form.text_field :manufacture %>
-  </p>
-  <p align="center">
+    <%= form.text_field :manufacture, class: "form-control" %>
+  </div>
+  <div class ="form-group">
     <%= form.label :model %><br>
-    <%= form.text_field :model %>
-  </p>
-  <p align="center">
+    <%= form.text_field :model, class: "form-control" %>
+  </div>
+  <div class ="form-group">
     <%= form.label :serial %><br>
-    <%= form.text_field :serial %>
-  </p>
-  <p align="center">
+    <%= form.text_field :serial, class: "form-control" %>
+  </div>
+  <div class ="form-group">
     <%= form.label :classroom %><br>
-    <%= form.text_field :classroom %>
-  </p>
-  <p align="center">
+    <%= form.text_field :classroom, class: "form-control" %>
+  </div>
+  <div class ="form-group">
     <%= form.label :ahc_number %><br>
-    <%= form.text_field :ahc_number %>
-  </p>
- 
-  <p align="center">
-    <%= form.submit %>
-  </p>
-  <p align="center">
+    <%= form.text_field :ahc_number, class: "form-control" %>
+  </div>
+
+  <div class="col-auto">
+      <p align ="center">
+      <%= form.submit :class => 'btn btn-primary mb-2'%>
+      </p>
+    </div>
     <%= link_to 'Back to Cameras', cameras_path %>
   </p>
  
