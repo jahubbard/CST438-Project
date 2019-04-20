@@ -120,6 +120,27 @@
                   <% end %>
                 </tbody>
               </table>
+              <br>
+            <h5>Lamp Change (>1500 hours)</h5>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacture</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Lamp Hours</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  <% @projector_hours.each do |proj| %>
+                  <tr>
+                    <td><%= proj.manufacture %></td>
+                    <td><%= proj.model %></td>
+                    <td><%= proj.total_lamp_hours %></td>
+                    <td><%= link_to 'Show', projector_path(proj) %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
         </div>
       </div>
       <br><br>
