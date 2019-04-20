@@ -47,6 +47,6 @@ class ComputersController < ApplicationController
     
     private
         def computer_params
-            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date)
+            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date, :model_year)
         end
 end

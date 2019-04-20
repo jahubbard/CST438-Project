@@ -27,13 +27,13 @@
     }
 </style>
 <body>
-    <div class="container">
-        <h1 align="center">Information Technology Inventory System</h1>    
-        <hr>
-        <div align="center">
-            <%= render 'nav' =%>       
-        </div>
-        <hr><br>
+  <h1 align="center">Information Technology Inventory System</h1>    
+    <hr>
+      <div align="center">
+        <%= render 'nav' =%>       
+      </div>
+    <hr><br>
+  <div class="container">
     <div class="row">
         <div class="col-sm">
             <h3>Computers</h3>
@@ -48,13 +48,14 @@
                   </tr>
                 </thead>
                 <tbody id="myTable">
+                  <% @replace_computers.each do |com| %>
                   <tr>
-                    
-                    <td>Dell</td>
-                    <td>Optiplex</td>
-                    <td>Computer1</td>
-                    <td>Show Link</td>
+                    <td><%= com.manufacture %></td>
+                    <td><%= com.model %></td>
+                    <td><%= com.name %></td>
+                    <td><%= link_to 'Show', computer_path(com) %></td>
                   </tr>
+                  <% end %>
                 </tbody>
               </table>
               <br>
@@ -68,13 +69,14 @@
                       </tr>
                     </thead>
                     <tbody id="myTable">
+                      <% @check_computers.each do |com| %>
                       <tr>
-                        
-                        <td>Dell</td>
-                        <td>Optiplex</td>
-                        <td>Computer1</td>
-                        <td>Show Link</td>
+                        <td><%= com.manufacture %></td>
+                        <td><%= com.model %></td>
+                        <td><%= com.name %></td>
+                        <td><%= link_to 'Show', computer_path(com) %></td>
                       </tr>
+                      <% end %>
                     </tbody>
                   </table>
         </div>
