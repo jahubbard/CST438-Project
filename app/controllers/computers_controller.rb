@@ -44,8 +44,9 @@ class ComputersController < ApplicationController
         redirect_to computers_path
     end
     
+    
     private
         def computer_params
-            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date)
+            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date, :model_year)
         end
 end

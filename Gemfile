@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'roo', "~> 2.8.0"
 #Bootstrap
 gem 'bootstrap', '~>4.3.1'
 

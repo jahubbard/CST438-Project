@@ -27,31 +27,133 @@
     }
 </style>
 <body>
-    <h1 align="center">Welcome to the Information Technology Inventory System!</h1>    
+  <h1 align="center">Information Technology Inventory System</h1>    
     <hr>
-    <div align="center">
+      <div align="center">
         <%= render 'nav' =%>       
+      </div>
+    <hr><br>
+  <div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h3>Computers</h3>
+            <br>
+            <h5>Need Replaced Soon (>5 years old)</h5>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacture</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Name</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  <% @replace_computers.each do |com| %>
+                  <tr>
+                    <td><%= com.manufacture %></td>
+                    <td><%= com.model %></td>
+                    <td><%= com.name %></td>
+                    <td><%= link_to 'Show', computer_path(com) %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <br>
+              <h5>Recently Checked</h5>
+                <table class="table table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Manufacture</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Name</th>
+                      </tr>
+                    </thead>
+                    <tbody id="myTable">
+                      <% @check_computers.each do |com| %>
+                      <tr>
+                        <td><%= com.manufacture %></td>
+                        <td><%= com.model %></td>
+                        <td><%= com.name %></td>
+                        <td><%= link_to 'Show', computer_path(com) %></td>
+                      </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+        </div>
+        <div class="col-sm">
+          <h3>Projectors</h3>
+          <br>
+            <h5>Need Replaced Soon (>5 years old)</h5>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacture</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Name</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  <tr>
+                    
+                    <td>Dell</td>
+                    <td>Optiplex</td>
+                    <td>Computer1</td>
+                    <td>Show Link</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
+      <br><br>
+      <div class="row">
+        <div class="col-sm">
+            <h3>Cameras</h3>
+            </hr></br>
+            <h5>Need Replaced Soon (>5 years old)</h5>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacture</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Name</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  <tr>
+                    
+                    <td>Dell</td>
+                    <td>Optiplex</td>
+                    <td>Computer1</td>
+                    <td>Show Link</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col-sm">
+          <h3>Switchers</h3>
+            </hr></br>
+            <h5>Need Replaced Soon (>5 years old)</h5>
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Manufacture</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Name</th>
+                  </tr>
+                </thead>
+                <tbody id="myTable">
+                  <tr>
+                    
+                    <td>Dell</td>
+                    <td>Optiplex</td>
+                    <td>Computer1</td>
+                    <td>Show Link</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+      </div>
     </div>
-    <hr>
-    <h3 align ="center">
-        Mission Statement
-    </h3>
-    <hr class = "hr1">
-    <h4 align ="center"> We are trying to benefits those who use old means of doing inventory with this application.</h4>
-   <br>
-    <h3 align ="center"> Over View</h3>
-    <hr class ="hr2">
-    
-    <p>This project is created with ruby and rails. It is an inventory system to allow users 
-    access to data in different categories and allow efficient planning based upon the data. 
-    In this instance, we are working with a local community college to assist them with their 
-    inventory procedure. Since they are using excel as their way of keeping their inventory, 
-    we decided to develop this website. This application allows users to view four different 
-    categories based upon the equipment used in the classrooms. From that, the users can see 
-    the data in that category and make changes. This will aid the college by keeping a up to 
-    date inventory and being able to plan for equipment upgrades.  
-    </p>
-<h4 class ="endline">Created by: Jared Hubbard and Cody Dill</h4>
 </body>
 
 </html>

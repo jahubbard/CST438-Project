@@ -1,4 +1,5 @@
 class Computer < ApplicationRecord
+   
     validates :manufacture, presence: { message: "Enter Manufacture." }
     validates :model, presence: { message: "Enter Model Number." }
     validates :serial, presence: { message: "Enter Serial Number." }
@@ -6,3 +7,5 @@ class Computer < ApplicationRecord
     validates :classroom, presence: { message: "Enter Classroom Number." }
     validates :check_date, presence: { message: "Enter Checked Date" }
 end
+
+
