@@ -48,6 +48,6 @@ class ProjectorsController < ApplicationController
         def projector_params
             params.require(:projector).permit(:manufacture, :model, :serial, 
             :ahc_number, :classroom, :mount_type, :lamp_type, :throw_distance, 
-            :date_install, :date_checked, :lamp_change, :total_lamp_hours, :repair_date, :date)
+            :date_install, :date_checked, :lamp_change, :total_lamp_hours, :repair_date, :date, :model_year)
         end
 end
