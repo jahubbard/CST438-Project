@@ -9,16 +9,17 @@ class LandingController < ApplicationController
     @projector_count = get_projector_count
     @camera_count = get_camera_count
     @switcher_count = get_switcher_count
+    @projector_hours = get_projector_hours
   end
   
   private
     
     def get_replace_computers
-      Computer.where("model_year <= ?", 5.years.ago).order(:created_at).limit(5)
+      Computer.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
     end
     
     def get_checked_computers
-      Computer.where("check_date >= ?", 1.month.ago).order(:created_at).limit(5)
+      Computer.where("check_date >= ?", 1.month.ago).order(:created_at).limit(3)
     end
     
     def get_computer_count
@@ -26,11 +27,15 @@ class LandingController < ApplicationController
     end
     
     def get_replace_projectors
-      Projector.where("model_year <= ?", 5.years.ago).order(:created_at).limit(5)
+      Projector.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
     end
     
     def get_projector_count
       Projector.distinct.count('serial')
+    end
+    
+    def get_projector_hours
+      Projector.where("total_lamp_hours >= 1500").order(:created_at).limit(3)
     end
     
     def get_camera_count
