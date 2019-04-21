@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<header>
-    <meta charset="UTF-8">
-</header> 
-  
-  
-<style>
-      hr
-    {
-        border: 1px solid black;
-    }
-  
-</style>
-<body>
   <h1 align="center"> Camera Database Entry </h1>
 <hr>
     <%= render 'nav' =%>
@@ -29,6 +14,10 @@
     <%= form.label :model %><br>
     <%= form.text_field :model, class: "form-control" %>
   </div>
+  <div class="form-group">
+      <%= form.label :model_year %><br>
+      <%= form.date_field :model_year, class: "form-control" %>      
+    </div>
   <div class ="form-group">
     <%= form.label :serial %><br>
     <%= form.text_field :serial, class: "form-control" %>
@@ -47,11 +36,8 @@
       <%= form.submit :class => 'btn btn-primary mb-2'%>
       </p>
     </div>
-    <%= link_to 'Back to Cameras', cameras_path %>
+    <%= link_to 'Back to Cameras', cameras_path, style: "color: white;" %>
   </p>
  
 <% end %>
 </div>
- 
-</body>
-</html>

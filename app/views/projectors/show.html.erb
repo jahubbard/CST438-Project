@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<header>
-    <meta charset="UTF-8">
-</header> 
-  
-  
-<style>
-      hr
-    {
-        border: 1px solid black;
-    }
-  
-</style>
-<body>
-  <h1 align ="center"> Projector Data </h1>
+<h1 align ="center"> Projector Data </h1>
 <hr>
     <%= render 'nav' =%>
 <hr>
@@ -88,8 +73,6 @@
   <%= @projector.repair_date.strftime("%m/%d/%Y") %>
 </p>
 <p align ="center">
-  <%= link_to 'Back to Projectors', projectors_path %>
+  <%= link_to 'Back to Projectors', projectors_path, style: "color: white;" %>
 </p>
 
-</body>
-</html>

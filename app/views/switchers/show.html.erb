@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html>
-<header>
-    <meta charset="UTF-8">
-</header> 
-  
-  
-<style>
-      hr
-    {
-        border: 1px solid black;
-    }
-  
-</style>
-<body>
-  <h1 align ="center"> Camera Data </h1>
+<h1 align ="center"> Camera Data </h1>
 <hr>
     <%= render 'nav' =%>
 <hr>
@@ -27,6 +12,11 @@
   <strong>Model:</strong>
   <%= @switcher.model %>
 </p align ="center">
+
+<p align ="center">
+  <strong>Model Year:</strong>
+  <%= @switcher.model_year.strftime("%m/%d/%Y") %>
+</p>
 
 <p align ="center">
   <strong>Serial:</strong>
@@ -48,8 +38,5 @@
   <%= @switcher.audio %>
 </p>
 <p align ="center">
-  <%= link_to 'Back to Switchers', switchers_path %>
+  <%= link_to 'Back to Switchers', switchers_path, style: "color: white;" %>
 </p>
- 
-</body>
-</html>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190420200126) do
+ActiveRecord::Schema.define(version: 20190421033546) do
 
   create_table "cameras", force: :cascade do |t|
     t.string "manufacture"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20190420200126) do
     t.string "ahc_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "model_year"
   end
 
   create_table "computers", force: :cascade do |t|
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20190420200126) do
     t.string "audio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "model_year"
   end
 
   create_table "users", force: :cascade do |t|

@@ -47,6 +47,6 @@ class CamerasController < ApplicationController
     private
         def camera_params
             params.require(:camera).permit(:manufacture, :model, :serial, 
-            :classroom, :ahc_number)
+            :classroom, :ahc_number, :model_year)
         end
 end

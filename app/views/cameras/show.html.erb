@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-<header>
-    <meta charset="UTF-8">
-</header> 
-  
-  
-<style>
-      hr
-    {
-        border: 1px solid black;
-    }
-  
-</style>
-<body>
   <h1 align ="center"> Camera Data </h1>
 <hr>
     <%= render 'nav' =%>
@@ -26,7 +11,12 @@
 <p align ="center">
   <strong>Model:</strong>
   <%= @camera.model %>
-</p align ="center">
+</p>
+
+<p align ="center">
+  <strong>Model Year:</strong>
+  <%= @camera.model_year.strftime("%m/%d/%Y") %>
+</p>
 
 <p align ="center">
   <strong>Serial:</strong>
@@ -43,8 +33,6 @@
   <%= @camera.ahc_number %>
 </p>
 <p align ="center">
-  <%= link_to 'Back to Cameras', cameras_path %>
+  <%= link_to 'Back to Cameras', cameras_path, style: "color: white;" %>
 </p>
  
-</body>
-</html>
