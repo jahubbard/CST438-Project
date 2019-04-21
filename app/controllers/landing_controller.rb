@@ -4,12 +4,14 @@ class LandingController < ApplicationController
   def index
     @replace_computers = get_replace_computers
     @check_computers = get_checked_computers
-    @replace_projectors = get_replace_projectors
     @computer_count = get_computer_count
+    @replace_projectors = get_replace_projectors
     @projector_count = get_projector_count
-    @camera_count = get_camera_count
-    @switcher_count = get_switcher_count
     @projector_hours = get_projector_hours
+    @camera_count = get_camera_count
+    @replace_cameras = get_replace_cameras
+    @replace_switchers = get_replace_switchers
+    @switcher_count = get_switcher_count
   end
   
   private
@@ -38,8 +40,16 @@ class LandingController < ApplicationController
       Projector.where("total_lamp_hours >= 1500").order(:created_at).limit(3)
     end
     
+    def get_replace_cameras
+      Camera.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
+    end
+    
     def get_camera_count
       Camera.distinct.count('serial')
+    end
+    
+    def get_replace_switchers
+      Switcher.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
     end
     
     def get_switcher_count

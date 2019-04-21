@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    
-<header>
-    <meta charset="UTF-8">
-</header>
-<style>
-    hr
-    {
-        border: 1px solid black;
-    }
-  .float-right 
-  {
-  background-color: darkgray;
-  color: white;
-  border: 2px solid #555555;
-  }
-  .float-right:hover
-  {
-  background-color: #555555;
-  color: white;
-  }
-  .test
-  {
-    align ="center";
-  }
-  input.form-control
-  {
-    background-color: #4d4d4d;
-    color:white;
-  }
-  
-  
-</style>
-<body>
-  <h1 align="center">Projector Data</h1>
+<h1 align="center">Projector Data</h1>
 <hr>
   <%= render 'nav' %>
 <hr>
@@ -76,7 +40,7 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'Back to Dashboard', landing_path %>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
   <%= link_to '<button type="button" class="float-right">New Projector</button>'.html_safe, new_projector_path %>
 </div>
 <script>
@@ -90,8 +54,6 @@
 });  
   
 </script>
-</body>
-</html>
 
 
 

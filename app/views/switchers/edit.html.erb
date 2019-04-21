@@ -12,6 +12,10 @@
     <%= form.text_field :model %>
   </p>
   <p align="center">
+    <%= form.label :model_year %><br>
+    <%= form.date_field :model_year %>
+  </p>
+  <p align="center">
     <%= form.label :serial %><br>
     <%= form.text_field :serial %>
   </p>
@@ -33,5 +37,5 @@
  
 <% end %>
  
-<%= link_to 'Back', switchers_path %>
+<%= link_to 'Back', switchers_path, style: "color: white;" %>
 </div>

@@ -47,6 +47,6 @@ class SwitchersController < ApplicationController
     private
         def switcher_params
             params.require(:switcher).permit(:manufacture, :model, :serial, 
-            :classroom, :ahc_number, :audio)
+            :classroom, :ahc_number, :audio, :model_year)
         end
 end
