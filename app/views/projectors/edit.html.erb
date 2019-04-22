@@ -1,5 +1,8 @@
 <div class="container">
-<h1>Edit Projectors</h1>
+<h1 align ="center">Edit Projectors</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
 
 <%= form_with(model: @projector, local: true) do |form| %>
  
@@ -60,7 +63,7 @@
     <%= form.date_field :repair_date %>
   </p>
   <p align="center">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary mb-2' %>
   </p>
  
 <% end %>

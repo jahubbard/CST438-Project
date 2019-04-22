@@ -1,6 +1,8 @@
 <div class="container">
-<h1>Edit Camera</h1>
-
+<h1 align ="center">Edit Camera</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
 <%= form_with(model: @camera, local: true) do |form| %>
  
   <p>
@@ -29,7 +31,7 @@
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit  :class => 'btn btn-primary mb-2'%>
   </p>
  
 <% end %>
