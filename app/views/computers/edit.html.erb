@@ -1,5 +1,8 @@
 <div class="container">
-<h1>Edit Computer</h1>
+<h1 align ="center">Edit Computer</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
 
 <%= form_with(model: @computer, local: true) do |form| %>
  
@@ -33,7 +36,7 @@
   </p>
  
   <p>
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary mb-2' %>
   </p>
  
 <% end %>

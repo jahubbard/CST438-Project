@@ -12,6 +12,7 @@ class SwitchersController < ApplicationController
     def new
         @switcher = Switcher.new
     end
+    
     def edit
         @switcher = Switcher.find(params[:id]) 
     end

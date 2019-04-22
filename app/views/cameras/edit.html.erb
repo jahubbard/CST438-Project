@@ -5,32 +5,32 @@
       <hr>
 <%= form_with(model: @camera, local: true) do |form| %>
  
-  <p>
+  <p align="center">
     <%= form.label :manufacture %><br>
     <%= form.text_field :manufacture %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :model %><br>
     <%= form.text_field :model %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :model_year %><br>
     <%= form.date_field :model_year %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :serial %><br>
     <%= form.text_field :serial %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :name %><br>
     <%= form.text_field :name %>
   </p>
-  <p>
+  <p align="center">
     <%= form.label :classroom %><br>
     <%= form.text_field :classroom %>
   </p>
  
-  <p>
+  <p align="center">
     <%= form.submit  :class => 'btn btn-primary mb-2'%>
   </p>
  

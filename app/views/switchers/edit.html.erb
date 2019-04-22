@@ -1,7 +1,10 @@
 <div class="container">
-<h1>Edit Switchers</h1>
+<h1 align ="center">Edit Switchers</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
 
-<%= form_with(model: @computer, local: true) do |form| %>
+<%= form_with(model: @switcher, local: true) do |form| %>
  
 <p align="center">
     <%= form.label :manufacture %><br>
@@ -32,7 +35,7 @@
     <%= form.text_field :audio %>
   </p>
   <p align="center">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary mb-2' %>
   </p>
  
 <% end %>
