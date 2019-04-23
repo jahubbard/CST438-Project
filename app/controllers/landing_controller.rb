@@ -37,7 +37,8 @@ class LandingController < ApplicationController
     end
     
     def get_projector_hours
-      Projector.where("total_lamp_hours >= 1500").order(total_lamp_hours: :desc).limit(3)
+      replace_hours = 1500
+      Projector.where("total_lamp_hours >= ?", replace_hours).order(total_lamp_hours: :desc).limit(3)
     end
     
     def get_replace_cameras
