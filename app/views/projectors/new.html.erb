@@ -11,12 +11,37 @@
 <%= form_with scope: :projector, url: projectors_path, local: true do |form| %>
   
   <div class="form-group">
-      <%= form.label :manufacture %><br>
-      <%= form.text_field :manufacture, class: "form-control" %>
+
+      <%= form.label :manufacture, 'Manufacture' %><br>
+      <%= form.radio_button :manufacture, 'Epson'%> Epson
+      <%= form.radio_button :manufacture, 'Hitachi'%> Hitachi
+      <%= form.radio_button :manufacture, 'Panasonic'%> Panasonic
+      <%= form.radio_button :manufacture, 'Viewsonic'%> Viewsonic
+      <%= form.radio_button :manufacture, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :manufacture_size_test, class: "form-control", :id => :manufacture_size_test %>
     </div>
     <div class="form-group">
-      <%= form.label :model %><br>
-      <%= form.text_field :model, class: "form-control" %>
+       <%= form.label :model, 'Model' %> <br>
+      <%= form.radio_button :model, '6110i'%> 6110i
+      <%= form.radio_button :model, '8350'%> 8350
+      <%= form.radio_button :model, '915W'%> 915W
+      <%= form.radio_button :model, '935W'%> 935W
+      <%= form.radio_button :model, 'CP-X885'%> CP-X885 
+      <%= form.radio_button :model, 'CP-X400'%> CP-X400
+      <%= form.radio_button :model, 'CP-X205'%> CP-X205
+      <%= form.radio_button :model, 'CP-X260'%> CP-X260
+      <%= form.radio_button :model, 'CP-X306'%> CP-X306 
+      <%= form.radio_button :model, 'CP-X417'%> CP-X417 <br>
+      <%= form.radio_button :model, 'CP-X445'%> CP-X445
+      <%= form.radio_button :model, 'PTAX200U'%> PTAX200U 
+      <%= form.radio_button :model, 'PT-CW331R'%> PT-CW331R
+      <%= form.radio_button :model, 'PT-EZ570'%> PT-EZ570
+      <%= form.radio_button :model, 'PT-VW350'%> PT-VW350
+      <%= form.radio_button :model, 'PT-VZ570'%> PT-VZ570
+      <%= form.radio_button :model, 'PJD5555W'%> PJD5555W 
+      <%= form.radio_button :model, 'PG705HD'%> PG705HD    
+      <%= form.radio_button :model, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :model_cond_test, class: "form-control", :id => :model_cond_test %>
     </div>
     <div class="form-group">
       <%= form.label :model_year %><br>
@@ -35,12 +60,29 @@
       <%= form.text_field :classroom, class: "form-control" %>    
     </div>
     <div class="form-group">
-      <%= form.label :mount_type %><br>
-      <%= form.text_field :mount_type, class: "form-control" %>    
+      <%= form.label :mount_type, 'Model Type' %> <br>
+      <%= form.radio_button :mount_type, 'A(Wide)'%> A(Wide)
+      <%= form.radio_button :mount_type, 'Spider Mount'%> Spider Mount
+      <%= form.radio_button :mount_type, 'B(Long)'%> B(Long)
+      <%= form.radio_button :mount_type, 'Revelation Mode'%> Revelation Mode
+      <%= form.radio_button :mount_type, 'Unique'%> Unique
+      <%= form.radio_button :mount_type, 'On Cart'%> On Cart
+      <%= form.radio_button :mount_type, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :mount_type_cond_test, class: "form-control", :id => :mount_type_cond_test %>
     </div>
     <div class="form-group">
-      <%= form.label :lamp_type %><br>
-      <%= form.text_field :lamp_type, class: "form-control" %>    
+
+      <%= form.label :lamp_type, 'Lamp Type' %> <br>
+      <%= form.radio_button :lamp_type, 'ELPLP45'%> ELPLP45
+      <%= form.radio_button :lamp_type, 'ELPLP61'%> ELPLP61
+      <%= form.radio_button :lamp_type, 'ELPLP64'%> ELPLP64
+      <%= form.radio_button :lamp_type, 'ETLAV400'%> ETLAV400
+      <%= form.radio_button :lamp_type, 'VS15881'%> VS15881
+      <%= form.radio_button :lamp_type, 'VS17057'%> VS17057
+      <%= form.radio_button :lamp_type, 'CP-X260'%> CP-X260
+      <%= form.radio_button :lamp_type, 'CP-X400/300/200'%> CP-X400/300/200
+      <%= form.radio_button :lamp_type, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :lamp_type_cond_test, class: "form-control", :id => :lamp_type_cond_test %>
     </div>
     <div class="form-group">
       <%= form.label :throw_distance %><br>
@@ -55,8 +97,9 @@
       <%= form.date_field :date_checked, class: "form-control" %>    
     </div>
     <div class="form-group">
-      <%= form.label :lamp_change %><br>
-      <%= form.text_field :lamp_change, class: "form-control" %>    
+      <%= form.label :lamp_change, 'Lamp Change' %> <br>
+      <%= form.radio_button :lamp_change, 'Yes'%> Yes
+      <%= form.radio_button :lamp_change, 'No'%> No
     </div>
     <div class="form-group">
       <%= form.label :total_lamp_hours %><br>
@@ -74,7 +117,25 @@
     </div>
   <p align="center">
     <%= link_to 'Back to Projectors', projectors_path, style: "color: white;" %>
+        <br></br>
+    <br></br>
   </p>
   
 <% end %>
   </div>
+<script>
+   $("manufacture_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+ 
+    $("model_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("mount_type_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+ 
+    $("lamp_type_size_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+</script>

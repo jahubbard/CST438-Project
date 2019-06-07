@@ -7,12 +7,32 @@
 
 <%= form_with scope: :camera, url: cameras_path, local: true do |form| %>
   <div class ="form-group">
-    <%= form.label :manufacture %><br>
-    <%= form.text_field :manufacture, class: "form-control" %>
+      <%= form.label :manufacture, 'Manufacture' %> <br>
+      <%= form.radio_button :manufacture, 'Canon'%> Canon
+      <%= form.radio_button :manufacture, 'Elmo'%> Elmo
+      <%= form.radio_button :manufacture, 'Epson'%> Epson
+      <%= form.radio_button :manufacture, 'Samsung'%> Samsung
+      <%= form.radio_button :manufacture, 'Wolfvision'%> Wolfvision
+      <%= form.radio_button :manufacture, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :manufacture_cond_test, class: "form-control", :id => :manufacture_cond_test %>
   </div>
   <div class ="form-group">
-    <%= form.label :model %><br>
-    <%= form.text_field :model, class: "form-control" %>
+      <%= form.label :model, 'Model' %> <br>
+      <%= form.radio_button :model, 'RE-350'%> Canon - RE-350
+      <%= form.radio_button :model, 'HV-5100XG'%> Elmo - HV-5100XG
+      <%= form.radio_button :model, 'TT-02'%> Elmo - TT-02    
+      <%= form.radio_button :model, 'P30S'%> Elmo - P30S      
+      <%= form.radio_button :model, 'P10HD'%> Elmo - P10HD      
+      <%= form.radio_button :model, 'TT-02RX'%> Elmo - TT-02RX     
+      <%= form.radio_button :model, 'TT-12'%> Elmo - TT-12       
+      <%= form.radio_button :model, 'HV3000XG'%> Elmo - HV3000XG   <br> 
+      <%= form.radio_button :model, 'ELPDC05'%> Epson - ELPDC05
+      <%= form.radio_button :model, 'SDP-860'%> Samsung - SDP-860
+      <%= form.radio_button :model, 'SDP-960'%> Samsung - SDP-960
+      <%= form.radio_button :model, 'VZ8Light4'%> Wolfvision - VZ8Light4
+      <%= form.radio_button :model, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :model_cond_test, class: "form-control", :id => :model_cond_test %>    
+    
   </div>
   <div class="form-group">
       <%= form.label :model_year %><br>
@@ -37,7 +57,20 @@
       </p>
     </div>
     <%= link_to 'Back to Cameras', cameras_path, style: "color: white;" %>
+        <br></br>
+    <br></br>
   </p>
  
 <% end %>
 </div>
+<script>
+   $("manufacture_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("model_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("audio_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+</script>

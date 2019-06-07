@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190423041911) do
+ActiveRecord::Schema.define(version: 20190604035918) do
 
   create_table "cameras", force: :cascade do |t|
     t.string "manufacture"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20190423041911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "model_year"
+    t.string "operating_system"
   end
 
   create_table "inventories", force: :cascade do |t|
@@ -70,6 +71,30 @@ ActiveRecord::Schema.define(version: 20190423041911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "model_year"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.string "classroom"
+    t.string "proj_hours"
+    t.string "screen_cond"
+    t.string "tv_cond"
+    t.string "monitor_cond"
+    t.string "monitor_size"
+    t.string "computer_cond"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tvs", force: :cascade do |t|
+    t.string "manufacture"
+    t.string "model"
+    t.string "serial"
+    t.string "ahc_number"
+    t.string "classroom"
+    t.date "date_install"
+    t.date "model_year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

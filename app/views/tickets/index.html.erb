@@ -1,0 +1,57 @@
+<h1 align="center">Ticket Data</h1>
+<hr>
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <input class ="form-control" id="myInput" type="text" placeholder="Search the Table">
+  <br>
+  <table class="table table-hover table-dark", id="myTable2">
+    <thead>
+      <tr>
+        <th scope="col", onclick="sortTable(0)">Classroom</th>
+        <th scope="col", onclick="sortTable(1)">Projector Hours</th>
+        <th scope="col", onclick="sortTable(2)">Screen Condition</th>
+        <th scope="col", onclick="sortTable(3)">TV Condition</th>
+        <th scope="col", onclick="sortTable(4)">Monitor Condition</th>
+        <th scope="col", onclick="sortTable(5)">Monitor Size</th>
+        <th scope="col", onclick="sortTable(6)">Computer Condition</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <% @tickets.each do |tic| %>
+      <tr>
+        <td><%= tic.classroom %></td>
+        <td><%= tic.proj_hours %></td>
+        <td><%= tic.screen_cond %></td>
+        <td><%= tic.tv_cond %></td>
+        <td><%= tic.monitor_cond %></td>
+        <td><%= tic.monitor_size %></td>
+        <td><%= tic.computer_cond %></td>
+        <td><%= link_to 'Show', ticket_path(tic) %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(tic) %></td>
+        <td><%= link_to 'Destroy', ticket_path(tic),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+  <%= link_to '<button type="button" class="float-right">New Ticket</button>'.html_safe, new_ticket_path %>
+<br></br>
+<br></br>
+</div>
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});  
+  
+</script>
+
+
+

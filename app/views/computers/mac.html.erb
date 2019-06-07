@@ -1,0 +1,57 @@
+<h1 align="center">Mac Computer Data</h1>
+<hr>
+
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <input class ="form-control" id="myInput" type="text" placeholder="Search the Table">
+  <br>
+  <table class="table table-hover table-dark", id="myTable2">
+    <thead>
+      <tr>
+        <th scope="col", onclick="sortTable(0)">Manufacture</th>
+        <th scope="col", onclick= "sortTable(1)">Model</th>
+        <th scope="col", onclick= "sortTable(2)">Operating System</th>
+        <th scope="col", onclick= "sortTable(3)">Serial</th>
+        <th scope="col", onclick= "sortTable(4)">Name</th>
+        <th scope="col", onclick= "sortTable(5)">Classroom</th>
+        <th scope="col", onclick= "sortTable(6)">Check Date</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <% @computers.each do |com| %>
+      <tr>
+        
+        <td><%= com.manufacture %></td>
+        <td><%= com.model %></td>
+        <td><%= com.operating_system %></td>
+        <td><%= com.serial %></td>
+        <td><%= com.name %></td>
+        <td><%= com.classroom %></td>
+        <td><%= com&.check_date&.strftime("%m/%d/%Y") %></td>
+        <td><%= link_to 'Show', computer_path(com) %></td>
+        <td><%= link_to 'Edit', edit_computer_path(com) %></td>
+        <td><%= link_to 'Destroy', computer_path(com),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+  <%= link_to '<button type="button" class="float-right">New Computer</button>'.html_safe, new_computer_path %>
+  <br> </br>
+  <br> </br>
+</div>
+
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+

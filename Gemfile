@@ -13,6 +13,8 @@ gem 'nokogiri'
 
 #YamlDB
 gem 'yaml_db'
+#roo
+gem "roo", "~> 2.8.0"
 
 #Devise Authentication
 gem 'devise'

@@ -10,16 +10,39 @@
 <%= form_with scope: :computer, url: computers_path, local: true do |form| %>
 
     <div class="form-group">
-      <%= form.label :manufacture %><br>
-      <%= form.text_field :manufacture, class: "form-control" %>
+      <%= form.label :manufacture, 'Manufacture' %> <br>
+      <%= form.radio_button :manufacture, 'Dell'%> Dell
+      <%= form.radio_button :manufacture, 'HP'%> HP
+      <%= form.radio_button :manufacture, 'Apple'%> Apple
+      <%= form.radio_button :manufacture, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :manufacture_cond_test, class: "form-control", :id => :manufacture_cond_test %>
     </div>
     <div class="form-group">
-      <%= form.label :model %><br>
-      <%= form.text_field :model, class: "form-control" %>
+      <%= form.label :model, 'Model' %> <br>
+      <%= form.radio_button :model, 'Optiplex 7010'%> Optiplex 7010
+      <%= form.radio_button :model, 'Optiplex 7020'%> Optiplex 7020
+      <%= form.radio_button :model, 'Optiplex 7040'%> Optiplex 7040
+      <%= form.radio_button :model, 'Optiplex 7050'%> Optiplex 7050
+      <%= form.radio_button :model, 'Optiplex 745'%> Optiplex 745 <br>
+      <%= form.radio_button :model, 'Optiplex 755'%> Optiplex 755
+      <%= form.radio_button :model, 'Optiplex 790'%> Optiplex 790
+      <%= form.radio_button :model, 'Optiplex 990'%> Optiplex 990
+      <%= form.radio_button :model, 'Mac Mini'%> Mac Mini
+      <%= form.radio_button :model, 'iMac'%> iMac 
+      <%= form.radio_button :model, 'Macbook Pro'%> Macbook Pro      
+      <%= form.radio_button :model, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :model_cond_test, class: "form-control", :id => :model_cond_test %>
     </div>
     <div class="form-group">
       <%= form.label :model_year %><br>
-      <%= form.date_field :model_year, class: "form-control" %>      
+      <%= form.date_field(:model_year, class: "form-control") %>      
+    </div>
+    <div class="form-group">
+      <%= form.label :operating_system, 'Operating System' %> <br>
+      <%= form.radio_button :operating_system, 'Windows'%> Windows
+      <%= form.radio_button :operating_system, 'Mac OS'%> Mac OS
+      <%= form.radio_button :operating_system, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :operating_system_cond_test, class: "form-control", :id => :operating_system_cond_test %>
     </div>
     <div class="form-group">
       <%= form.label :serial %><br>
@@ -44,7 +67,20 @@
     </div>
   <p align ="center">
       <%= link_to 'Back to Computers', computers_path, style: "color: white;" %>
+          <br></br>
+    <br></br>
   </p>
 
 <% end %>
 </div>
+<script>
+   $("manufacture_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+   $("operating_system_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ }) 
+   $("model_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ }) 
+</script>

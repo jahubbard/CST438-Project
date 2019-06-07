@@ -1,3 +1,11 @@
+<style>
+  table
+{
+   overflow-y:scroll;
+   height:720px;
+   display:block; 
+}
+</style>
 <h1 align="center">Computer Data</h1>
 <hr>
 
@@ -11,7 +19,7 @@
       <tr>
         <th scope="col", onclick="sortTable(0)">Manufacture</th>
         <th scope="col", onclick= "sortTable(1)">Model</th>
-        <th scope="col", onclick= "sortTable(2)">Model Year</th>
+        <th scope="col", onclick= "sortTable(2)">Operating System</th>
         <th scope="col", onclick= "sortTable(3)">Serial</th>
         <th scope="col", onclick= "sortTable(4)">Name</th>
         <th scope="col", onclick= "sortTable(5)">Classroom</th>
@@ -24,7 +32,7 @@
         
         <td><%= com.manufacture %></td>
         <td><%= com.model %></td>
-        <td><%= com&.model_year&.strftime("%m/%d/%Y") %></td>
+        <td><%= com.operating_system %></td>
         <td><%= com.serial %></td>
         <td><%= com.name %></td>
         <td><%= com.classroom %></td>
@@ -43,6 +51,7 @@
   <br> </br>
   <br> </br>
 </div>
+
 <script>
   $(document).ready(function(){
   $("#myInput").on("keyup", function() {

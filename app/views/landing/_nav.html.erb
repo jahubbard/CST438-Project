@@ -1,8 +1,14 @@
-    <style>
+     <style>
     nav
     {
-        width: 900px;
+        width: 1100px;
     }
+    .dropdown-menu {
+    background-color: #343a40;
+}
+.navbar .dropdown.show li { 
+  background-color: #343a40;
+}
         
     .navmid
     {
@@ -13,15 +19,83 @@
         margin-right: auto;
     }
     </style>
-    <nav class ="navmid">
-        <%= link_to 'Dashboard', landing_path, style: "color:black;" %>
-        <%= link_to 'Computers', computers_path, style: "color: black;" %>
-        <%= link_to 'Projectors', projectors_path, style: "color: black;" %>
-        <%= link_to 'Cameras', cameras_path, style: "color: black;" %>
-        <%= link_to 'Switcher', switchers_path, style: "color: black;" %> 
+    <div class="container">
+      <nav class="navbar mx-auto">
+        <div class = "btn-group">
+
+      <button type="button" class="btn btn-dark">
+          <%= link_to 'Dashboard', landing_path, style: "color:white;" %>
+          </button>
+       </div>
+      <div class = "btn-group">
+      <div class="dropdown show">
+        <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Computers
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="dropdown-item">
+                <%= link_to 'Windows', windows_path, style: "color: white;" %>
+            </li>
+            <li class="dropdown-item">
+                <%= link_to 'Mac OS', mac_path, style: "color: white;" %>
+            </li>
+            <li class="dropdown-item">
+                <%= link_to 'Both', computers_path, style: "color: white;" %>
+            </li>
+        </div>
+      </div>
+      </div>
+        <div class = "btn-group">
+      <div class="dropdown show">
+        <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Visual Displays
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li class="dropdown-item">
+                <%= link_to 'Projectors', projectors_path, style: "color: white;" %>
+            </li>
+            
+            <li class="dropdown-item">
+                <%= link_to 'TV\'s', tvs_path, style: "color: white;" %>
+            </li>
+          
+        </div>
+      </div>
+      </div>
+     <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+            <%= link_to 'Cameras', cameras_path, style: "color: white;" %>
+            </button>
+        </div>
+            <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+            <%= link_to 'Switcher', switchers_path, style: "color: white;" %>
+            </button>
+         </div>
+         <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+            <%= link_to 'Maintenance', tickets_path, style: "color: white;" %>
+                </button>
+          </div>
+                   <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+            <%= link_to 'Equipment - Prices & Locations', equipment_path, style: "color: white;" %>
+                </button>
+          </div>
         <% if user_signed_in? %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, style: "color: black;"  %>
+        <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, style: "color: white;"  %>
+            </button>
+          </div>
         <% else %>
-          <%= link_to "Login", new_user_session_path, style: "color: black;"  %>
+        <div class = "btn-group">
+        <button type="button" class="btn btn-dark">
+          <%= link_to "Login", new_user_session_path, style: "color: white;"  %>
+          </button>
+          </div>
         <% end %>
-    </nav>
+        </nav>
+      </div>

@@ -6,6 +6,7 @@ class Computer < ApplicationRecord
     validates :name, presence: { message: "Enter Name." }
     validates :classroom, presence: { message: "Enter Classroom Number." }
     validates :check_date, presence: { message: "Enter Checked Date" }
+    validates :operating_system, presence: { message: "Select Operating System" }
 end
 
 

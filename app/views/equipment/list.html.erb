@@ -1,0 +1,228 @@
+<h1 align="center">Equipment List</h1>
+<hr>
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <input class ="form-control" id="myInput" type="text" placeholder="Search the Table">
+  <br>
+  <table class="table table-hover table-dark", id="myTable2">
+    <thead>
+      <tr>
+        <th scope="col", onclick="sortTable(0)">Name</th>
+        <th scope="col", onclick="sortTable(1)">Price</th>
+        <th scope="col", onclick="sortTable(2)">Link</th>
+      </tr>
+    </thead>
+    <tbody id="myTable"> 
+    <tr>
+      <td>Dell - Optiplex 7040</td>
+      <td> $467.00</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-Business-Certified-Refurbished/dp/B078NHP8QZ/ref=sr_1_3?keywords=Dell+-+Optiplex+7040&qid=1559617919&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optiplex 7050</td>
+      <td> $889.00</td>
+      <td> <a href="https://www.amazon.com/Dell-OptiPlex-Desktop-Computer-1735H/dp/B06W2HQ21D/ref=sr_1_5?keywords=Dell+-+Optiplex+7050&qid=1559618081&s=gateway&sr=8-5"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optiplex 7020</td>
+      <td> $250.00</td>
+      <td> <a href="https://www.amazon.com/7020-SFF-Bluetooth-Win10Pro64-Refurbished/dp/B07DXZ553X/ref=sr_1_4?keywords=Dell+-+Optiplex+7020&qid=1559618178&s=gateway&sr=8-4"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optiplex 7010</td>
+      <td> $214.00</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-7010-Professional-Refurbished/dp/B01LKOZEF0/ref=sr_1_3?keywords=Dell+-+Optiplex+7010&qid=1559618306&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optiplex 790</td>
+      <td> $649.99</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-790-SFF-Desktop/dp/B07NSBVSKX/ref=sr_1_2_sspa?keywords=Dell+-+Optiplex+790&qid=1559618431&s=gateway&sr=8-2-spons&psc=1"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optiplex 9010 AIO</td>
+      <td> $676.99</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-9010-Desktop-Computer/dp/B07PY57DC4/ref=sr_1_1_sspa?keywords=dell+OptiPlex+9010+AIO&qid=1559618530&s=gateway&sr=8-1-spons&psc=1"> Product Link </a></td>
+    </tr>
+        <tr>
+      <td>Dell - Optplex 9020 AIO</td>
+      <td> $359.00</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-Monitors-Upgrades-Available/dp/B07SD6Z9N6/ref=sr_1_1_sspa?keywords=dell+OptiPlex+9020+AIO&qid=1559618624&s=gateway&sr=8-1-spons&psc=1"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Apple - iMac</td>
+      <td> $1,799.00</td>
+      <td> <a href="https://www.apple.com/shop/buy-mac/imac/27-inch"> Product Link </a> </td>
+    </tr>
+    <tr>
+      <td>Apple - Mac Mini</td>
+      <td> $799.00</td>
+      <td> <a href="https://www.apple.com/shop/buy-mac/mac-mini"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Apple - MacBook Pro</td>
+      <td> $1,299.00</td>
+      <td> <a href="https://www.apple.com/shop/buy-mac/macbook-pro"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Apple - iPad Air</td>
+      <td> $499.00</td>
+      <td> <a href="https://www.apple.com/shop/buy-ipad/ipad-air"> Product Link </a></td>
+    </tr>
+     <tr>
+      <td>Viewsonic - PJD5555W</td>
+      <td> $379.99</td>
+      <td> <a href="https://www.amazon.com/ViewSonic-PA503W-3600-Lumens-Projector/dp/B0749NTSCD/ref=sr_1_3?keywords=Viewsonic+PJD5555w&qid=1559619483&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Viewsonic - PG705HD</td>
+      <td> $799.99</td>
+      <td> <a href="https://www.amazon.com/ViewSonic-PG705HD-Lumens-Networkable-Projector/dp/B07652G4HL/ref=sr_1_2_sspa?keywords=Viewsonic+PG705HD&qid=1559619610&s=gateway&sr=8-2-spons&psc=1"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Panasonic - PT-VZ570</td>
+      <td> $1,699.00</td>
+      <td> <a href="https://www.njaccessory.com/store/product_info.php?csv=gg&products_id=224825&gclid=EAIaIQobChMIoaTC2PTO4gIVhb9kCh1peQWwEAQYASABEgJRc_D_BwE"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Dell - Optiplex 7010</td>
+      <td> $214.00</td>
+      <td> <a href="https://www.amazon.com/Dell-Optiplex-7010-Professional-Refurbished/dp/B01LKOZEF0/ref=sr_1_3?keywords=Dell+-+Optiplex+7010&qid=1559618306&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Panasonic - PT-CW331R</td>
+      <td> $2,499.00</td>
+      <td> <a href="https://www.bhphotovideo.com/c/product/1457541-REG/panasonic_pt_vmz50u_5000_lumen_wuxga_laser.html/?ap=y&gclid=EAIaIQobChMIyLqhmvXO4gIVitdkCh38fABBEAQYASABEgLUSfD_BwE&smp=Y"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Panasonic - PT-VW350</td>
+      <td> $1,699.00</td>
+      <td> <a href="https://www.amazon.com/Panasonic-PT-VW350-LCD-Projector-720p/dp/B010MGN8IW/ref=sr_1_3?keywords=Panasonic+PT-VW350&qid=1559620054&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Panasonic - PT-EZ570</td>
+      <td> $3,079.12</td>
+      <td> <a href="https://www.amazon.com/Panasonic-PT-EZ570U-LCD-Projector-Computers/dp/B007VPHGV8/ref=sr_1_12?keywords=Panasonic+PT-EZ570&qid=1559620147&s=gateway&sr=8-12"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Hitachi - CPX-260</td>
+      <td> $512.88</td>
+      <td> <a href="https://www.amazon.com/Hitachi-CP-X260-LCD-XGA-Projector/dp/B000FJVQ4A/ref=sr_1_4?crid=1C1Z39CQ1PIXO&keywords=hitachi+projector+cp-x260&qid=1559620384&s=gateway&sprefix=Hitachi+projectors+CP%2Caps%2C195&sr=8-4"> Product Link </a> </td>
+    </tr>
+    <tr>
+      <td>Hitachi - CP-X400</td>
+      <td> $685.00</td>
+      <td> <a href="https://www.amazon.com/CP-X400-Lumens-7-7LBS-6WATT-Carry/dp/B000QI1NFC/ref=sr_1_19?keywords=hitachi+projector+CP-X400&qid=1559620489&s=gateway&sr=8-19"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Hitachi - CP-X445</td>
+      <td> $1,299.00</td>
+      <td> <a href="https://www.amazon.com/Hitachi-CP-X445-XGA-LCD-PROJECTOR/dp/B00009V328/ref=sr_1_7?keywords=hitachi+projector+CP-X445&qid=1559620545&s=gateway&sr=8-7"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Epson - Powerlite - 915w</td>
+      <td> $647.89</td>
+      <td> <a href="https://www.amazon.com/Epson-PowerLite-915W-WXGA-Projector/dp/B004MB6ATI/ref=sr_1_2?keywords=epson+powerlite+915w&qid=1559620611&s=gateway&sr=8-2"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Epson - Powerlite - 6110i</td>
+      <td> $125.00</td>
+      <td> <a href="https://www.amazon.com/Epson-Powerlite-Lumens-Multimedia-Projector/dp/B0014L27N2/ref=sr_1_3?keywords=epson+powerlite+6110i&qid=1559620724&s=gateway&sr=8-3"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Extron - MLS 406</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.extron.com/product/mls406"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Extron - MLS 406MA</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.extron.com/product/mls406ma"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Extron - MLS 406SA</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.extron.com/product/mls406sa"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Extron - MLS 608D</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.extron.com/product/mls608dseries2"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Sony - STR-DE995</td>
+      <td> $141.41</td>
+      <td> <a href="https://www.amazon.com/Sony-STR-DE995-receiver-channel-black/dp/B00009WPPA/ref=sr_1_1?keywords=Sony+STR-DE995&qid=1559621608&s=gateway&sr=8-1"> Product Link </a> </td>
+    </tr>
+    <tr>
+      <td>Kramer - VP-725DSA</td>
+      <td> $1,684.80</td>
+      <td> <a href="https://www.bhphotovideo.com/c/product/1282453-REG/kramer_vp_734_7_input_4k_uhd_presentation.html?ap=y&gclid=EAIaIQobChMIyvq34PvO4gIVi8JkCh2XDQsvEAQYASABEgL8PvD_BwE&smp=y"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Epson - ELPDC05</td>
+      <td> $120.00</td>
+      <td> <a href="https://www.amazon.com/Epson-America-ELPDC05-Resolution-Document/dp/B001F2XBTO/ref=sr_1_1?keywords=Epson+ELPDC05&qid=1559621988&s=gateway&sr=8-1"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Elmo - HV-5100XG</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.elmousa.com/product/hv-5100xg/"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Elmo - HV3000XG</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.elmousa.com/product/hv-3000xg/"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Elmo - P10HD</td>
+      <td> $1,699.00</td>
+      <td> <a href="https://www.amazon.com/P10Hd-Full-Had-Visual-Presenter/dp/B01INVAU66/ref=sr_1_1?keywords=Elmo+P10HD&qid=1559622277&s=gateway&sr=8-1"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Elmo -P30S</td>
+      <td> Product Retired</td>
+      <td> <a href="https://www.elmousa.com/product/p30s/"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Canon - RE-350</td>
+      <td> $142.52</td>
+      <td> <a href="https://www.amazon.com/Presentation-Visualizer-Portable-Digital-Projector/dp/B00F3JUEA4/ref=sr_1_1?keywords=Canon+-+RE-350&qid=1559622409&s=gateway&sr=8-1"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Samasung - SDP-860</td>
+      <td> $209.99</td>
+      <td> <a href="https://www.amazon.com/Samsung-Presenter-Education-Classroom-Presentation/dp/B07S3XCDBL/ref=sr_1_2?keywords=samsung+sdp-860&qid=1559622511&s=gateway&sr=8-2"> Product Link </a> </td>
+    </tr>
+    <tr>
+      <td>Elmo - TT-12</td>
+      <td> $717.65</td>
+      <td> <a href="https://www.amazon.com/Elmo-1341-TT-12i-Interactive-Document/dp/B00HAKBEIA/ref=sr_1_5?keywords=Elmo+TT-12&qid=1559622622&s=gateway&sr=8-5"> Product Link </a></td>
+    </tr>
+    <tr>
+      <td>Wolfvision - VZ8Light4</td>
+      <td> $69.99</td>
+      <td> <a href="https://www.amazon.com/WolfVision-Inc-VZ-8plus3-VZ-8Plus3-Visualizer/dp/B00CP7V8JI/ref=sr_1_fkmr0_2?keywords=Wolfvision+VZ8Light4&qid=1559622731&s=gateway&sr=8-2-fkmr0"> Product Link </a></td>
+    </tr>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+  <br></br>
+  <br></br>
+</div>
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});  
+  
+</script>
+
+
+

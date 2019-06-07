@@ -1,0 +1,48 @@
+<h1 align ="center"> TV Data </h1>
+<hr>
+    <%= render 'nav' =%>
+<hr>
+
+<p align ="center">
+  <strong>Manufacture:</strong>
+  <%= @tv.manufacture %>
+</p>
+ 
+<p align ="center">
+  <strong>Model:</strong>
+  <%= @tv.model %>
+</p>
+
+<p align ="center">
+  <strong>Model Year:</strong>
+  <%= @tv.model_year.strftime("%m/%d/%Y") %>
+</p>
+
+<p align ="center">
+  <strong>Serial:</strong>
+  <%= @tv.serial %>
+</p>
+
+<p align ="center">
+  <strong>AHC Number:</strong>
+  <%= @tv.ahc_number %>
+</p>
+
+<p align ="center">
+  <strong>Classroom:</strong>
+  <%= @tv.classroom %>
+</p>
+
+<p align ="center">
+  <strong>Date Installed:</strong>
+  <%= @tv.date_install.strftime("%m/%d/%Y") %>
+</p>
+
+<p align ="center">
+  <%= link_to 'Back to TV\'s', tvs_path, style: "color: white;" %>
+    <br>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+</p>
+<br> </br>
+<br> </br>
+

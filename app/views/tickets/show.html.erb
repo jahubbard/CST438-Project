@@ -1,0 +1,48 @@
+<h1 align ="center"> Ticket Data </h1>
+<hr>
+    <%= render 'nav' =%>
+<hr>
+
+<p align ="center">
+  <strong>Classroom:</strong>
+  <%= @ticket.classroom %>
+</p>
+ 
+<p align ="center">
+  <strong>Projector Hours:</strong>
+  <%= @ticket.proj_hours %>
+</p>
+
+<p align ="center">
+  <strong>Screen Condition:</strong>
+  <%= @ticket.screen_cond %>
+</p>
+
+<p align ="center">
+  <strong>TV Condition:</strong>
+  <%= @ticket.tv_cond %>
+</p>
+
+<p align ="center">
+  <strong>Monitor Condition:</strong>
+  <%= @ticket.monitor_cond %>
+</p>
+
+<p align ="center">
+  <strong>Monitor Size:</strong>
+  <%= @ticket.monitor_size %>
+</p>
+
+<p align ="center">
+  <strong>Computer Condition:</strong>
+  <%= @ticket.computer_cond %>
+</p>
+
+<p align ="center">
+  <%= link_to 'Back to Tickets', tickets_path, style: "color: white;" %>
+    <br>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+</p>
+<br> </br>
+<br> </br>
+

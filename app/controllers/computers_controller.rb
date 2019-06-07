@@ -44,9 +44,16 @@ class ComputersController < ApplicationController
         redirect_to computers_path
     end
     
+    def windows
+        @computers = Computer.where(operating_system: 'Windows')
+    end
+    
+    def mac
+        @computers = Computer.where(operating_system: 'Mac OS')
+    end
     
     private
         def computer_params
-            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date, :model_year)
+            params.require(:computer).permit(:manufacture, :model, :serial, :name, :classroom, :check_date, :model_year, :operating_system)
         end
 end

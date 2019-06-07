@@ -6,6 +6,7 @@ class LandingController < ApplicationController
     @check_computers = get_checked_computers
     @computer_count = get_computer_count
     @replace_projectors = get_replace_projectors
+    @replace_lamps = get_replace_lamps
     @projector_count = get_projector_count
     @projector_hours = get_projector_hours
     @camera_count = get_camera_count
@@ -30,6 +31,14 @@ class LandingController < ApplicationController
     
     def get_replace_projectors
       Projector.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
+    end
+    
+    def get_replace_lamps
+      view_replace = 5000
+      ep_replace = 3000
+      Projector.where("manufacture = 'Viewsonic' AND cast(total_lamp_hours as integer) >= cast(? as integer)", view_replace).
+      or(Projector.where("manufacture = 'Epson' AND cast(total_lamp_hours as integer) >= cast(? as integer)", ep_replace)).
+      order(total_lamp_hours: :desc).limit(3)
     end
     
     def get_projector_count

@@ -1,0 +1,53 @@
+<h1 align="center">TV Data</h1>
+<hr>
+  <%= render 'nav' %>
+<hr>
+<div class="container">
+  <input class ="form-control" id="myInput" type="text" placeholder="Search the Table">
+  <br>
+  <table class="table table-hover table-dark", id="myTable2">
+    <thead>
+      <tr>
+        <th scope="col", onclick="sortTable(0)">Manufacture</th>
+        <th scope="col", onclick="sortTable(1)">Model</th>
+        <th scope="col", onclick="sortTable(2)">Serial</th>
+        <th scope="col", onclick="sortTable(3)">Classroom</th>
+        <th scope="col", onclick="sortTable(4)">Date Installed</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <% @tvs.each do |tv| %>
+      <tr>
+        <td><%= tv.manufacture %></td>
+        <td><%= tv.model %></td>
+        <td><%= tv.serial %></td>
+        <td><%= tv.classroom %></td>
+        <td><%= tv.date_install %></td>
+        <td><%= link_to 'Show', tv_path(tv) %></td>
+        <td><%= link_to 'Edit', edit_tv_path(tv) %></td>
+        <td><%= link_to 'Destroy', tv_path(tv),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Back to Dashboard', landing_path, style: "color: white;" %>
+  <%= link_to '<button type="button" class="float-right">New TV</button>'.html_safe, new_tv_path %>
+    <br></br>
+    <br></br>
+</div>
+<script>
+  $(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});  
+  
+</script>
+
+
+

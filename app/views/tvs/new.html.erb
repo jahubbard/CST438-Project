@@ -1,0 +1,65 @@
+<div class="container">
+  <h1 align="center"> TV Database Entry</h1>
+ 
+<hr>
+    <%= render 'nav' =%>
+<hr> 
+<h2 align="center">New TV</h2>
+
+
+
+<%= form_with scope: :tv, url: tvs_path, local: true do |form| %>
+  
+  <div class="form-group">
+      <%= form.label :manufacture, 'Manufacture' %> <br>
+      <%= form.radio_button :manufacture, 'Samsung'%> Samsung
+      <%= form.radio_button :manufacture, 'LG'%> LG
+      <%= form.radio_button :manufacture, 'Vizio'%> Vizio
+      <%= form.radio_button :manufacture, 'Sharp'%> Sharp
+      <%= form.radio_button :manufacture, 'Sony'%> Sony
+      <%= form.radio_button :manufacture, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :manufacture_cond_test, class: "form-control", :id => :manufacture_cond_test %>
+    </div>
+    <div class="form-group">
+      <%= form.label :model %><br>
+      <%= form.text_field :model, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :model_year %><br>
+      <%= form.date_field :model_year, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :serial %><br>
+      <%= form.text_field :serial, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :ahc_number %><br>
+      <%= form.text_field :ahc_number, class: "form-control" %>
+    </div>  
+    <div class="form-group">
+      <%= form.label :classroom %><br>
+      <%= form.text_field :classroom, class: "form-control" %>    
+    </div>
+    <div class="form-group">
+      <%= form.label :date_install %><br>
+      <%= form.date_field :date_install, class: "form-control" %>    
+    </div>
+  
+    <div class="col-auto">
+      <p align ="center">
+      <%= form.submit :class => 'btn btn-primary mb-2'%>
+      </p>
+    </div>
+  <p align="center">
+    <%= link_to 'Back to TV\'s', projectors_path, style: "color: white;" %>
+      <br></br>
+    <br></br>
+  </p>
+  
+<% end %>
+  </div>
+<script>
+   $("manufacture_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+</script>

@@ -19,6 +19,10 @@
     <%= form.date_field :model_year %>
   </p>
   <p align ="center">
+    <%= form.label :operating_system %><br>
+    <%= form.text_field :operating_system %>
+  </p>
+  <p align ="center">
     <%= form.label :serial %><br>
     <%= form.text_field :serial %>
   </p>
@@ -42,5 +46,7 @@
 <% end %>
  
 <%= link_to 'Back', computers_path, style: "color: white;" %>
+    <br></br>
+    <br></br>
 </div>
-<br> </br>
+

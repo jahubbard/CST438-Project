@@ -88,7 +88,7 @@
                 </tbody>
               </table>
               <br>
-            <h5>Lamp Change (>1500 hours)</h5>
+            <h5>Lamp Change</h5>
             <table class="table table-hover table-dark">
                 <thead>
                   <tr>
@@ -98,7 +98,7 @@
                   </tr>
                 </thead>
                 <tbody id="myTable">
-                  <% @projector_hours.each do |proj| %>
+                  <% @replace_lamps.each do |proj| %>
                   <tr>
                     <td><%= proj.manufacture %></td>
                     <td><%= proj.model %></td>

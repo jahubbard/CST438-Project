@@ -10,12 +10,36 @@
 
 <%= form_with scope: :switcher, url: switchers_path, local: true do |form| %>
     <div class="form-group">
-      <%= form.label :manufacture %><br>
-      <%= form.text_field :manufacture, class: "form-control" %>
+      
+      <%= form.label :manufacture, 'Manufacture' %> <br>
+      <%= form.radio_button :manufacture, 'Extron'%> Extron
+      <%= form.radio_button :manufacture, 'Harmon/Kardon'%> Harmon/Kardon
+      <%= form.radio_button :manufacture, 'Kramer'%> Kramer
+      <%= form.radio_button :manufacture, 'Smart'%> Smart
+      <%= form.radio_button :manufacture, 'Sony'%> Sony
+      <%= form.radio_button :manufacture, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :manufacture_cond_test, class: "form-control", :id => :manufacture_cond_test %>
+      
     </div>
     <div class="form-group">
-      <%= form.label :model %><br>
-      <%= form.text_field :model, class: "form-control" %>
+
+      <%= form.label :model, 'Model' %> <br>
+      <%= form.radio_button :model, 'IN 1508'%> Extron - IN 1508
+      <%= form.radio_button :model, 'MLS 406'%> Extron - MLS 406
+      <%= form.radio_button :model, 'MLS 406MA'%> Extron -MLS 406MA
+      <%= form.radio_button :model, 'MLS 406SA'%> Extron - MLS 406SA
+      <%= form.radio_button :model, 'MLS 608D'%> Extron - MLS 608D
+      <%= form.radio_button :model, 'HK 3480'%> Harmon/Kardon - HK 3480 <br>
+      <%= form.radio_button :model, 'VP-725DSA'%> Kramer - VP-725DSA
+      <%= form.radio_button :model, 'HR-XVC15SUS'%> Sony - HR-XVC15SUS
+      <%= form.radio_button :model, 'STR-D6710'%> Sony - STR-D6710
+      <%= form.radio_button :model, 'STR-DE995'%> Sony - STR-DE995
+      <%= form.radio_button :model, 'STR-DE997'%> Sony - STR-DE997
+      <%= form.radio_button :model, 'STR-DG600'%> Sony - STR-DG600
+      <%= form.radio_button :model, 'STR-DG710'%> Sony - STR-DG710
+      <%= form.radio_button :model, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :model_cond_test, class: "form-control", :id => :model_cond_test %>
+
     </div>
     <div class="form-group">
       <%= form.label :model_year %><br>
@@ -34,8 +58,15 @@
       <%= form.text_field :ahc_number, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= form.label :audio %><br>
-      <%= form.text_field :audio, class: "form-control" %>
+      <%= form.label :audio, 'Audio' %> <br>
+      <%= form.radio_button :audio, '(AG Podium)'%> (AG Podium)
+      <%= form.radio_button :audio, '(Use Extron)'%> (Use Extron)
+      <%= form.radio_button :audio, '(Use Receiver)'%> (Use Receiver)
+      <%= form.radio_button :audio, '(Use SMART Integrated)'%> (Use SMART Integrated)
+      <%= form.radio_button :audio, '(Valcom 24V)'%> (Valcom 24V)
+      <%= form.radio_button :audio, '(Soundcraft Gigrac)'%> (Soundcraft Gigrac)
+      <%= form.radio_button :audio, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :audio_cond_test, class: "form-control", :id => :audio_cond_test %>
     </div>
     <div class="col-auto">
       <p align ="center">
@@ -44,6 +75,19 @@
     </div>
     <p align="center">
     <%= link_to 'Back to Switchers', switchers_path, style: "color: white;" %>
+        <br></br>
+    <br></br>
   </p>
 <% end %>
 </div>
+<script>
+   $("manufacture_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("model_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("audio_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+</script>

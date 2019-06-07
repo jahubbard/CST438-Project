@@ -1,0 +1,98 @@
+<div class="container">
+  <h1 align="center"> Ticket Database Entry</h1>
+ 
+<hr>
+    <%= render 'nav' =%>
+<hr> 
+<h2 align="center">New Ticket</h2>
+
+
+
+<%= form_with scope: :ticket, url: tickets_path, local: true do |form| %>
+  
+  <div class="form-group">
+      <%= form.label :classroom %><br>
+      <%= form.text_field :classroom, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :proj_hours, 'Projector Hours' %><br>
+      <%= form.text_field :proj_hours, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :screen_cond, 'Screen Condition' %><br>
+      <%= form.radio_button :screen_cond, 'Good'%> Good
+      <%= form.radio_button :screen_cond, 'Okay'%> Okay
+      <%= form.radio_button :screen_cond, 'Replace'%> Replace
+      <%= form.radio_button :screen_cond, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :screen_cond_test, class: "form-control", :id => :screen_cond_test %>
+
+    </div>
+    <div class="form-group">
+      <%= form.label :tv_cond, 'TV Condition' %><br>
+      <%= form.radio_button :tv_cond, 'Good'%> Good
+      <%= form.radio_button :tv_cond, 'Okay'%> Okay
+      <%= form.radio_button :tv_cond, 'Replace'%> Replace
+      <%= form.radio_button :tv_cond, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :tv_cond_test, class: "form-control", :id => :tv_cond_test %>
+    </div>
+    <div class="form-group">
+      <%= form.label :monitor_cond, 'Monitor Condition' %><br>
+      <%= form.radio_button :monitor_cond, 'Good'%> Good
+      <%= form.radio_button :monitor_cond, 'Okay'%> Okay
+      <%= form.radio_button :monitor_cond, 'Replace'%> Replace
+      <%= form.radio_button :monitor_cond, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :monitor_cond_test, class: "form-control", :id => :monitor_cond_test %>
+    </div>  
+    <div class="form-group">
+      <%= form.label :monitor_size, 'Monitor Size' %><br>
+      <%= form.radio_button :monitor_size, '19in'%> 19in
+      <%= form.radio_button :monitor_size, '20in'%> 20in
+      <%= form.radio_button :monitor_size, '22in'%> 22in
+      <%= form.radio_button :monitor_size, '24in'%> 24in
+      <%= form.radio_button :monitor_size, '27in'%> 27in
+      <%= form.radio_button :monitor_size, '32in'%> 32in
+      <%= form.radio_button :monitor_size, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :monitor_size_test, class: "form-control", :id => :monitor_size_test %>
+    </div>
+    <div class="form-group">
+      <%= form.label :computer_cond, 'Computer Condition' %><br>
+      <%= form.radio_button :computer_cond, 'Good'%> Good
+      <%= form.radio_button :computer_cond, 'Okay'%> Okay
+      <%= form.radio_button :computer_cond, 'Replace'%> Replace
+      <%= form.radio_button :computer_cond, nil, :id => :hidden_radio, :style => "display:none" %> 
+      <%= form.text_field :computer_cond_test, class: "form-control", :id => :computer_cond_test %>
+    </div>
+  
+    <div class="col-auto">
+      <p align ="center">
+      <%= form.submit :class => 'btn btn-primary mb-2'%>
+      </p>
+    </div>
+  <p align="center">
+    <%= link_to 'Back to Tickets', tickets_path, style: "color: white;" %>
+    <br></br>
+    <br></br>
+  </p>
+  
+<% end %>
+  </div>
+
+<script>
+   $("screen_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+ 
+    $("tv_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("monitor_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+ 
+    $("monitor_size_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+    $("computer_cond_test").keyup(function(){
+   $("hidden_radio").val($(this).val())
+ })
+</script>

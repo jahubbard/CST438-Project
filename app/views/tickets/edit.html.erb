@@ -1,0 +1,47 @@
+<div class="container">
+<h1 align ="center">Edit Ticket</h1>
+      <hr>
+        <%= render 'nav' =%>
+      <hr>
+
+<%= form_with(model: @ticket, local: true) do |form| %>
+ 
+<p align="center">
+    <%= form.label :classroom %><br>
+    <%= form.text_field :classroom %>
+  </p>
+  <p align="center">
+    <%= form.label :proj_hours %><br>
+    <%= form.text_field :proj_hours %>
+  </p>
+  <p align="center">
+    <%= form.label :screen_cond %><br>
+    <%= form.text_field :screen_cond %>
+  </p>
+  <p align="center">
+    <%= form.label :tv_cond %><br>
+    <%= form.text_field :tv_cond %>
+  </p>
+  <p align="center">
+    <%= form.label :monitor_cond %><br>
+    <%= form.text_field :monitor_cond %>
+  </p>
+  <p align="center">
+    <%= form.label :monitor_size %><br>
+    <%= form.text_field :monitor_size %>
+  </p>
+  <p align="center">
+    <%= form.label :computer_cond %><br>
+    <%= form.text_field :computer_cond %>
+  </p>
+  <p align="center">
+    <%= form.submit :class => 'btn btn-primary mb-2' %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', tickets_path, style: "color: white;" %>
+    <br></br>
+    <br></br>
+</div>
+
