@@ -33,14 +33,6 @@ class LandingController < ApplicationController
       Projector.where("model_year <= ?", 5.years.ago).order(:created_at).limit(3)
     end
     
-    def get_replace_lamps
-      view_replace = 5000
-      ep_replace = 3000
-      Projector.where("manufacture = 'Viewsonic' AND cast(total_lamp_hours as integer) >= cast(? as integer)", view_replace).
-      or(Projector.where("manufacture = 'Epson' AND cast(total_lamp_hours as integer) >= cast(? as integer)", ep_replace)).
-      order(total_lamp_hours: :desc).limit(3)
-    end
-    
     def get_projector_count
       Projector.distinct.count('serial')
     end
@@ -48,6 +40,14 @@ class LandingController < ApplicationController
     def get_projector_hours
       replace_hours = 1500
       Projector.where("cast(total_lamp_hours as integer) >= cast(? as integer)", replace_hours).order(total_lamp_hours: :desc).limit(3)
+    end
+    
+    def get_replace_lamps
+      view_replace = 5000
+      ep_replace = 3000
+      Projector.where("manufacture = 'Viewsonic' AND cast(total_lamp_hours as integer) >= cast(? as integer)", view_replace).
+      or(Projector.where("manufacture = 'Epson' AND cast(total_lamp_hours as integer) >= cast(? as integer)", ep_replace)).
+      order(total_lamp_hours: :desc).limit(3)
     end
     
     def get_replace_cameras
